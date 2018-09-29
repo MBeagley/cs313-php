@@ -45,6 +45,14 @@ body {
   float: right;
 }
 
+hr
+{
+    background-color: #e6e600;
+    border: 0 none;
+    color: #e6e600;
+    height: 2px;
+}
+
 .column {
   float: left;
   width: 50%;
