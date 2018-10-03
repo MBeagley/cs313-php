@@ -1,0 +1,93 @@
+* {margin: 0; padding: 0;}
+
+div {
+  margin: 20px;
+}
+
+.header {
+  background-color: #b366ff;
+  border-radius: 85px;
+  color: white;
+  padding: 30px;
+  text-align: center;
+  font-family: 'Chakra Petch', sans-serif;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+/* Style the navbar */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  margin: 0px;
+}
+
+/* Navbar links */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-family: Helvetica, Verdana, sans-serif;
+}
+
+.navbar a:hover {
+  background-color: #d6d6c2;
+  color: black;
+}
+
+.navbar a.active {
+  background-color: #b366ff;
+}
+
+.navbar-right {
+  float: right;
+  margin: 0px;
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+  width: 600px;
+}
+
+h2 {
+  font: bold 20px/1.5 Helvetica, Verdana, sans-serif;
+}
+
+h3 {
+  font: bold 15px/1.5 Helvetica, Verdana, sans-serif;
+  color: #b366ff;
+}
+
+
+
+li img {
+  float: left;
+  margin: 0 15px 0 0;
+  width:100%;
+  max-width:200px;
+}
+
+li p {
+  font: 200 12px/1.5 Georgia, Times New Roman, serif;
+}
+
+li {
+  padding: 10px;
+  overflow: auto;
+}
+
+li:hover {
+  background: #d6d6c2;
+}
