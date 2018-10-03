@@ -8,7 +8,6 @@ $prods = array
 
 function display($prods) {
 	for ($x = 0; $x <= count($prods); $x++) {
-		echo "The number is: $x <br>";
 		echo "<li>";
 		echo "<img src='images/".$prods[$x][0].".jpg' />";
 		echo "<h2>".$prods[$x][1]."</h2>";
