@@ -54,7 +54,7 @@ session_start();
           echo "<h3>$".$prods[$x][3]."</h3>\n";
           echo "<p>\n";
           echo "<input id='".$prods[$x][0]."' type='number' name='quantity' min='1' max='10' value='1'>\n";
-          echo "<button type='button' onclick='addItem(document.getElementById('".$prods[$x][0]."').value)'>Add to Cart</button>\n";
+          echo "<button type='button' onclick='addItem(document.getElementById(\"".$prods[$x][0]."\").value)'>Add to Cart</button>\n";
           echo "</p>\n";
           echo "</li>\n";
         }
