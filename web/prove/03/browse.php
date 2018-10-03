@@ -47,16 +47,16 @@ session_start();
       <li>
         <?php
         for ($x = 0; $x < count($prods); $x++) {
-          echo "<li>";
-          echo "<img src='images/".$prods[$x][0].".jpg' />";
-          echo "<h2>".$prods[$x][1]."</h2>";
-          echo "<p>.".$prods[$x][2]."</p>";
-          echo "<h3>$".$prods[$x][3]."</h3>";
-          echo "<p>";
-          echo "<input id='".$prods[$x][0]."' type='number' name='quantity' min='1' max='10' value='1'>";
-          echo "<button type='button' onclick='addItem(document.getElementById('".$prods[$x][0]."').value)'>Add to Cart</button>";
-          echo "</p>";
-          echo "</li>";
+          echo "<li>\n";
+          echo "<img src='images/".$prods[$x][0].".jpg'/>\n";
+          echo "<h2>".$prods[$x][1]."</h2>\n";
+          echo "<p>".$prods[$x][2]."</p>\n";
+          echo "<h3>$".$prods[$x][3]."</h3>\n";
+          echo "<p>\n";
+          echo "<input id='".$prods[$x][0]."' type='number' name='quantity' min='1' max='10' value='1'>\n";
+          echo "<button type='button' onclick='addItem(document.getElementById('".$prods[$x][0]."').value)'>Add to Cart</button>\n";
+          echo "</p>\n";
+          echo "</li>\n";
         }
         ?>
         <!-- <img src="images/nes.jpg" />

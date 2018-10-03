@@ -21,7 +21,7 @@ function display($prods) {
 		echo "<li>";
 		echo "<img src='images/".$prods[$x][0].".jpg' />";
 		echo "<h2>".$prods[$x][1]."</h2>";
-		echo "<p>.".$prods[$x][2]."</p>";
+		echo "<p>".$prods[$x][2]."</p>";
 		echo "<h3>$".$prods[$x][3]."</h3>";
 		echo "<p>";
 		echo "<input id='".$prods[$x][0]."' type='number' name='quantity' min='1' max='10' value='1'>";
