@@ -12,20 +12,22 @@ session_start();
 <body>
   <?php
 
+  $cart = array(array());
+
   $prods = array
   (
-    array("nes","Nintendo Entertainment System (NES)","Lorem ipsum dolor sit amet...",70),
-    array("nesControll","Controller (NES)","Lorem ipsum dolor sit amet...",10),
-    array("excitebike","Excitebike (NES)","Lorem ipsum dolor sit amet...",15),
-    array("snes","Super Nintendo Entertainment System (SNES)","Lorem ipsum dolor sit amet...",80),
-    array("snesControll","Controller (SNES)","Lorem ipsum dolor sit amet...",20),
-    array("donkeykong","Donkey Kong Country (SNES)","Lorem ipsum dolor sit amet...",20),
-    array("n64","Nintendo 64 (N64)","Lorem ipsum dolor sit amet...",90),
-    array("n64Controll","Controller (N64)","Lorem ipsum dolor sit amet...",15),
-    array("mario","Super Mario 64 (N64)","Lorem ipsum dolor sit amet...",30),
-    array("psx","Sony PlayStation (PSX)","Lorem ipsum dolor sit amet...",75),
-    array("psxControll","Controller (PSX)","Lorem ipsum dolor sit amet...",12),
-    array("parappa","PaRappa the Rapper (PSX)","Lorem ipsum dolor sit amet...",120)
+    array("nes","Nintendo Entertainment System (NES)",70),
+    array("nesControll","Controller (NES)",10),
+    array("excitebike","Excitebike (NES)",15),
+    array("snes","Super Nintendo Entertainment System (SNES)",80),
+    array("snesControll","Controller (SNES)",20),
+    array("donkeykong","Donkey Kong Country (SNES)",20),
+    array("n64","Nintendo 64 (N64)",90),
+    array("n64Controll","Controller (N64)",15),
+    array("mario","Super Mario 64 (N64)",30),
+    array("psx","Sony PlayStation (PSX)",75),
+    array("psxControll","Controller (PSX)",12),
+    array("parappa","PaRappa the Rapper (PSX)",120)
   );
   ?>
 
@@ -50,8 +52,7 @@ session_start();
           echo "<li>\n";
           echo "<img src='images/".$prods[$x][0].".jpg'/>\n";
           echo "<h2>".$prods[$x][1]."</h2>\n";
-          echo "<p>".$prods[$x][2]."</p>\n";
-          echo "<h3>$".$prods[$x][3]."</h3>\n";
+          echo "<h3>$".$prods[$x][2]."</h3>\n";
           echo "<p>\n";
           echo "<input id='".$prods[$x][0]."' type='number' name='quantity' min='1' max='10' value='1'>\n";
           echo "<button type='button' onclick='addItem(document.getElementById(\"".$prods[$x][0]."\").value)'>Add to Cart</button>\n";
