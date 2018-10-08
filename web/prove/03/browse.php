@@ -59,7 +59,7 @@ if (empty($_SESSION['count'])) {
           echo "<h3>$".$prods[$x][2]."</h3>\n";
           echo "<p>\n";
           if ( in_array($x, $_SESSION['cart']) ) {
-            echo "<a href='removeFromCart.php?id=".$x."'>Add to Cart</a>";
+            echo "<a href='removeFromCart.php?id=".$x."'>Remove from Cart</a>";
           }
           else {
             echo "<a href='addToCart.php?id=".$x."'>Add to Cart</a>";
