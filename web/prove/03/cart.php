@@ -8,6 +8,8 @@ if (empty($_SESSION['count'])) {
 if (empty($_SESSION['cart'])) {
   $_SESSION['cart'] = array();
 }
+
+var_dump($_SESSION['cart']);
 ?>
 <!DOCTYPE html>
 <html>
