@@ -51,7 +51,7 @@ array_push($_SESSION['cart'], $_GET['id']);
     <a href="checkout.html">Checkout</a>
     <div class="navbar-right">
       <?php
-      echo "<a id='cart' href='cart.html'>Cart(".$_SESSION['count'].")</a>";
+      echo "<a id='cart' href='cart.php'>Cart(".$_SESSION['count'].")</a>";
       ?>
     </div>
   </div>
@@ -61,10 +61,10 @@ array_push($_SESSION['cart'], $_GET['id']);
     echo "Added ".$prods[$_GET['id']][1]." to the cart!";
     ?>
   </div>
-  
+
   <div>
     <a href="browse.php">Continue Shopping</a>
-    <a href="cart.html">View Cart</a>    
+    <a href="cart.php">View Cart</a>    
   </div>
 
 </body>

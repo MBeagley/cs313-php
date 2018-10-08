@@ -46,7 +46,9 @@ if (empty($_SESSION['cart'])) {
     <a href="browse.php">Products</a>
     <a href="checkout.html">Checkout</a>
     <div class="navbar-right">
-      <a class="active" href="#cart">Cart</a>
+      <?php
+      echo "<a class='active' id='cart' href='cart.php'>Cart(".$_SESSION['count'].")</a>";
+      ?>
     </div>
   </div>
 

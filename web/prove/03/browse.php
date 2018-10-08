@@ -43,7 +43,7 @@ if (empty($_SESSION['count'])) {
     <a href="checkout.html">Checkout</a>
     <div class="navbar-right">
       <?php
-      echo "<a id='cart' href='cart.html'>Cart(".$_SESSION['count'].")</a>";
+      echo "<a id='cart' href='cart.php'>Cart(".$_SESSION['count'].")</a>";
       ?>
     </div>
   </div>
