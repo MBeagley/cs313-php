@@ -11,7 +11,7 @@ if (empty($_SESSION['cart'])) {
 
 $key = array_search($_GET['id'], $$_SESSION['cart']);
 
-unset($cart[$key]);
+unset($_SESSION['cart'][$key]);
 
 if ($_SESSION['count'] > 0) {
   $_SESSION['count']--;
