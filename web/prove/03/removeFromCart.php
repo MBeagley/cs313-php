@@ -5,10 +5,14 @@ if (empty($_SESSION['count'])) {
   $_SESSION['count'] = 0;
 }
 
-$_SESSION['count']++;
+$_SESSION['count']--;
 
 if (empty($_SESSION['cart'])) {
   $_SESSION['cart'] = array();
+}
+
+if (($key = array_search($_GET['id'], $$_SESSION['cart'])) !== false) {
+    unset($cart[$key]);
 }
 
 array_push($_SESSION['cart'], $_GET['id']);
@@ -58,7 +62,7 @@ array_push($_SESSION['cart'], $_GET['id']);
 
   <div>
     <?php
-    echo "Added ".$prods[$_GET['id']][1]." to the cart!";
+    echo "Removed ".$prods[$_GET['id']][1]." from the cart!";
     ?>
   </div>
   

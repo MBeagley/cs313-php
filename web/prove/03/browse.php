@@ -43,7 +43,7 @@ if (empty($_SESSION['count'])) {
     <a href="checkout.html">Checkout</a>
     <div class="navbar-right">
       <?php
-        echo "<a id='cart' href='cart.html'>Cart(".$_SESSION['count'].")</a>";
+      echo "<a id='cart' href='cart.html'>Cart(".$_SESSION['count'].")</a>";
       ?>
     </div>
   </div>
@@ -58,15 +58,21 @@ if (empty($_SESSION['count'])) {
           echo "<h2>".$prods[$x][1]."</h2>\n";
           echo "<h3>$".$prods[$x][2]."</h3>\n";
           echo "<p>\n";
-          echo "<a href='addToCart.php?id=".$x."'>Add to Cart</a>";
+          if ( in_array($x, $_SESSION['cart']) ) {
+            echo "<a href='removeFromCart.php?id=".$x."'>Add to Cart</a>";
+          }
+          else {
+            echo "<a href='addToCart.php?id=".$x."'>Add to Cart</a>";
+          }
+          
           // echo "<input id='".$prods[$x][0]."' type='number' name='quantity' min='1' max='10' value='1'>\n";
           // echo "<button type='button' onclick='addItem(document.getElementById(\"".$prods[$x][0]."\").value)'>Add to Cart</button>\n";
           echo "</p>\n";
           echo "</li>\n";
         }
         ?>
-    </ul>
-  </div>
+      </ul>
+    </div>
 
-</body>
-</html>
+  </body>
+  </html>
