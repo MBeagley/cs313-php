@@ -4,6 +4,14 @@ session_start();
 if (empty($_SESSION['count'])) {
   $_SESSION['count'] = 0;
 }
+
+$_SESSION['count']++;
+
+if (empty($_SESSION['cart'])) {
+  $_SESSION['cart'] = array();
+}
+
+array_push($_SESSION['cart'], $_GET['id']);
 ?>
 <!DOCTYPE html>
 <html>
@@ -43,29 +51,17 @@ if (empty($_SESSION['count'])) {
     <a href="checkout.html">Checkout</a>
     <div class="navbar-right">
       <?php
-        echo "<a id='cart' href='cart.html'>Cart(".$_SESSION['count'].")</a>";
+      echo "<a id='cart' href='cart.html'>Cart(".$_SESSION['count'].")</a>";
       ?>
     </div>
   </div>
 
   <div>
-    <ul>
-      <li>
-        <?php
-        for ($x = 0; $x < count($prods); $x++) {
-          echo "<li>\n";
-          echo "<img src='images/".$prods[$x][0].".jpg'/>\n";
-          echo "<h2>".$prods[$x][1]."</h2>\n";
-          echo "<h3>$".$prods[$x][2]."</h3>\n";
-          echo "<p>\n";
-          echo "<a href='addToCart.php?id=".$x."'>Add to Cart</a>";
-          // echo "<input id='".$prods[$x][0]."' type='number' name='quantity' min='1' max='10' value='1'>\n";
-          // echo "<button type='button' onclick='addItem(document.getElementById(\"".$prods[$x][0]."\").value)'>Add to Cart</button>\n";
-          echo "</p>\n";
-          echo "</li>\n";
-        }
-        ?>
-    </ul>
+    <?php
+    echo "Added ".$prods[$_GET['id']][1]." to the cart!";
+    ?>
+    <a href="browse.php">Continue Shopping</a>
+    <a href="cart.html">View Cart</a>    
   </div>
 
 </body>
