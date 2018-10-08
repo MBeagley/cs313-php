@@ -5,16 +5,16 @@ if (empty($_SESSION['count'])) {
   $_SESSION['count'] = 0;
 }
 
-if ($_SESSION['count'] > 0) {
-  $_SESSION['count']--;
-}
-
 if (empty($_SESSION['cart'])) {
   $_SESSION['cart'] = array();
 }
 
 if (($key = array_search($_GET['id'], $$_SESSION['cart'])) !== false) {
   unset($cart[$key]);
+
+  if ($_SESSION['count'] > 0) {
+    $_SESSION['count']--;
+  }
 }
 ?>
 <!DOCTYPE html>
