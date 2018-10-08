@@ -58,7 +58,7 @@ var_dump($_SESSION['cart']);
     <ul>
       <li>
         <?php
-        for ($x = 0; $x < count($_SESSION['cart']); $x++) {
+        foreach ($_SESSION['cart'] as $x) {
           echo "<li>\n";
           echo "<img src='images/".$prods[$_SESSION['cart'][$x]][0].".jpg'/>\n";
           echo "<h2>".$prods[$_SESSION['cart'][$x]][1]."</h2>\n";
