@@ -9,7 +9,7 @@ if (empty($_SESSION['cart'])) {
   $_SESSION['cart'] = array();
 }
 
-$key = array_search($_GET['id'], $$_SESSION['cart']);
+$key = array_search($_GET['id'], $_SESSION['cart']);
 
 unset($_SESSION['cart'][$key]);
 
