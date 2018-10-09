@@ -30,27 +30,29 @@ if (empty($_SESSION['count'])) {
     </div>
   </div>
 
-  <form action="confirm.php" method="post">
-    First name:<br>
-    <input type="text" name="firstname">
-    <br>
-    Last name:<br>
-    <input type="text" name="lastname">
-    <br>
-    Address:<br>
-    <input type="text" name="address">
-    <br>
-    City:<br>
-    <input type="text" name="city">
-    <br>
-    State:<br>
-    <input type="text" name="state">
-    <br>
-    Zip Code:<br>
-    <input type="text" name="zip">
-    <br>
-    <input type="submit" value="Submit">
-  </form>
+  <div class="form">
+    <form action="confirm.php" method="post">
+      First name:<br>
+      <input type="text" name="firstname">
+      <br>
+      Last name:<br>
+      <input type="text" name="lastname">
+      <br>
+      Address:<br>
+      <input type="text" name="address">
+      <br>
+      City:<br>
+      <input type="text" name="city">
+      <br>
+      State:<br>
+      <input type="text" name="state">
+      <br>
+      Zip Code:<br>
+      <input type="text" name="zip">
+      <br>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
 
 </body>
 </html>

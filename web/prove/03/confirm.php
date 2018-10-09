@@ -65,11 +65,13 @@ if (empty($_SESSION['cart'])) {
     <ul>
       <li>
         <?php
+        $total = 0;
         foreach ($_SESSION['cart'] as $x) {
           echo "<li>\n";
           echo "<img src='images/".$prods[$x][0].".jpg'/>\n";
           echo "<h2>".$prods[$x][1]."</h2>\n";
-          echo "<h3>$".$prods[$x][2]."</h3>\n";
+          echo "<h3>$".$prods[$x][2]."</h3>\n";          
+          $total = $total + $prods[$x][2];
           echo "</li>\n";
         }
         session_destroy();
@@ -77,6 +79,10 @@ if (empty($_SESSION['cart'])) {
       </ul>
     </div>
 
+    <?php
+    echo "<h2>Total:</h2>";
+    echo "<h3>$".$total."</h3>";
+    ?>
 
   </body>
   </html>

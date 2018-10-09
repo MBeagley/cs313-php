@@ -79,7 +79,7 @@ if (empty($_SESSION['cart'])) {
 
     <?php
     echo "<h2>Total:</h2>";
-    echo "<h3>".$total."</h3>";
+    echo "<h3>$".$total."</h3>";
     ?>
 
     <a class='buttonlink' href="checkout.php">Go to Checkout</a>
