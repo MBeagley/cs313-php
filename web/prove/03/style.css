@@ -70,8 +70,6 @@ h3 {
   color: #b366ff;
 }
 
-
-
 li img {
   float: left;
   margin: 0 15px 0 0;
@@ -90,4 +88,19 @@ li {
 
 li:hover {
   background: #d6d6c2;
+}
+
+a:link, a:visited {
+  background-color: white;
+  color: black;
+  border: 2px solid #b366ff;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: #b366ff;
+  color: white;
 }

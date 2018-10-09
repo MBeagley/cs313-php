@@ -57,7 +57,6 @@ if (empty($_SESSION['cart'])) {
     <?php
     echo "<p>".$_POST["firstname"]." ".$_POST["lastname"]."</p>\n";
     echo "<p>".$_POST["address"]."</p>\n";
-    echo "<p>".$_POST["firstname"]." ".$_POST["lastname"]."</p>\n";
     echo "<p>".$_POST["city"].", ".$_POST["state"]." ".$_POST["zip"]."</p>\n";
     ?>
   </div>
@@ -73,6 +72,7 @@ if (empty($_SESSION['cart'])) {
           echo "<h3>$".$prods[$x][2]."</h3>\n";
           echo "</li>\n";
         }
+        session_destroy();
         ?>
       </ul>
     </div>
