@@ -53,6 +53,16 @@ if (empty($_SESSION['cart'])) {
   </div>
 
   <div>
+    <p>Shipping Address:</p>
+    <?php
+    echo "<p>".$_POST["firstname"]." ".$_POST["lastname"]."</p>\n";
+    echo "<p>".$_POST["address"]."</p>\n";
+    echo "<p>".$_POST["firstname"]." ".$_POST["lastname"]."</p>\n";
+    echo "<p>".$_POST["city"].", ".$_POST["state"]." ".$_POST["zip"]."</p>\n";
+    ?>
+  </div>
+
+  <div>
     <ul>
       <li>
         <?php
@@ -61,12 +71,6 @@ if (empty($_SESSION['cart'])) {
           echo "<img src='images/".$prods[$x][0].".jpg'/>\n";
           echo "<h2>".$prods[$x][1]."</h2>\n";
           echo "<h3>$".$prods[$x][2]."</h3>\n";
-          echo "<p>\n";
-          echo "<a href='removeFromCart.php?id=".$x."'>Remove from Cart</a>";
-          
-          // echo "<input id='".$prods[$x][0]."' type='number' name='quantity' min='1' max='10' value='1'>\n";
-          // echo "<button type='button' onclick='addItem(document.getElementById(\"".$prods[$x][0]."\").value)'>Add to Cart</button>\n";
-          echo "</p>\n";
           echo "</li>\n";
         }
         ?>

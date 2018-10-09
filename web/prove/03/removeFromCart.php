@@ -51,8 +51,8 @@ if ($_SESSION['count'] > 0) {
   </div>
 
   <div class="navbar" id="navbar">
-    <a class="active" href="#home">Products</a>
-    <a href="checkout.html">Checkout</a>
+    <a class="active" href="browse.php">Products</a>
+    <a href="checkout.php">Checkout</a>
     <div class="navbar-right">
       <?php
       echo "<a id='cart' href='cart.php'>Cart(".$_SESSION['count'].")</a>";
