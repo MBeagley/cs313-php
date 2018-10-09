@@ -53,7 +53,7 @@ if (empty($_SESSION['cart'])) {
   </div>
 
   <div>
-    <p>Shipping Address:</p>
+    <h2>Shipping Address:</h2>
     <?php
     echo "<p>".$_POST["firstname"]." ".$_POST["lastname"]."</p>\n";
     echo "<p>".$_POST["address"]."</p>\n";
@@ -79,10 +79,12 @@ if (empty($_SESSION['cart'])) {
       </ul>
     </div>
 
-    <?php
-    echo "<h2>Total:</h2>";
-    echo "<h3>$".$total."</h3>";
-    ?>
+    <div>
+      <?php
+      echo "<h2>Total:</h2>";
+      echo "<h3>$".$total."</h3>";
+      ?>
+    </div>
 
   </body>
   </html>

@@ -77,11 +77,13 @@ if (empty($_SESSION['cart'])) {
       </ul>
     </div>
 
-    <?php
-    echo "<h2>Total:</h2>";
-    echo "<h3>$".$total."</h3>";
-    ?>
+    <div>
+      <?php
+      echo "<h2>Total:</h2>";
+      echo "<h3>$".$total."</h3>";
+      ?>
 
-    <a class='buttonlink' href="checkout.php">Go to Checkout</a>
+      <a class='buttonlink' href="checkout.php">Go to Checkout</a>
+    </div>
   </body>
   </html>
