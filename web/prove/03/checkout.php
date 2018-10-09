@@ -30,6 +30,10 @@ if (empty($_SESSION['count'])) {
     </div>
   </div>
 
+  <div>
+    <h2>Please enter shipping address</h2>
+  </div>
+
   <div class="form">
     <form action="confirm.php" method="post">
       First name:<br>
