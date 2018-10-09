@@ -67,8 +67,8 @@ if ($_SESSION['count'] > 0) {
   </div>
   
   <div>
-    <a href="browse.php">Continue Shopping</a>
-    <a href="cart.php">View Cart</a>    
+    <a class='buttonlink' href="browse.php">Continue Shopping</a>
+    <a class='buttonlink' href="cart.php">View Cart</a>    
   </div>
 
 </body>

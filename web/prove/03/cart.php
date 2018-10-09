@@ -73,6 +73,6 @@ if (empty($_SESSION['cart'])) {
       </ul>
     </div>
 
-
+    <a class='buttonlink' href="checkout.php">Go to Checkout</a>
   </body>
   </html>

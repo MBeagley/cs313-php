@@ -59,10 +59,10 @@ if (empty($_SESSION['count'])) {
           echo "<h3>$".$prods[$x][2]."</h3>\n";
           echo "<p>\n";
           if ( in_array($x, $_SESSION['cart']) ) {
-            echo "<a href='removeFromCart.php?id=".$x."'>Remove from Cart</a>";
+            echo "<a class='buttonlink' href='removeFromCart.php?id=".$x."'>Remove from Cart</a>";
           }
           else {
-            echo "<a href='addToCart.php?id=".$x."'>Add to Cart</a>";
+            echo "<a class='buttonlink' href='addToCart.php?id=".$x."'>Add to Cart</a>";
           }
           
           // echo "<input id='".$prods[$x][0]."' type='number' name='quantity' min='1' max='10' value='1'>\n";

@@ -90,7 +90,7 @@ li:hover {
   background: #d6d6c2;
 }
 
-li a:link, a:visited {
+a.buttonlink:link, li a:visited {
   background-color: white;
   color: black;
   border: 2px solid #b366ff;
@@ -100,7 +100,7 @@ li a:link, a:visited {
   display: inline-block;
 }
 
-li a:hover, a:active {
+a.buttonlink:hover, a:active {
   background-color: #b366ff;
   color: white;
 }
