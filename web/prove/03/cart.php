@@ -52,17 +52,21 @@ if (empty($_SESSION['cart'])) {
     </div>
   </div>
 
+  <h2>Your Cart:</h2>
+
   <div>
     <ul>
       <li>
         <?php
+        $total = 0;
         foreach ($_SESSION['cart'] as $x) {
           echo "<li>\n";
           echo "<img src='images/".$prods[$x][0].".jpg'/>\n";
           echo "<h2>".$prods[$x][1]."</h2>\n";
           echo "<h3>$".$prods[$x][2]."</h3>\n";
+          $total = $total + $prods[$x][2];
           echo "<p>\n";
-          echo "<a href='removeFromCart.php?id=".$x."'>Remove from Cart</a>";
+          echo "<a class='buttonlink' href='removeFromCart.php?id=".$x."'>Remove from Cart</a>";
           
           // echo "<input id='".$prods[$x][0]."' type='number' name='quantity' min='1' max='10' value='1'>\n";
           // echo "<button type='button' onclick='addItem(document.getElementById(\"".$prods[$x][0]."\").value)'>Add to Cart</button>\n";
@@ -72,6 +76,11 @@ if (empty($_SESSION['cart'])) {
         ?>
       </ul>
     </div>
+
+    <?php
+    echo "<h2>Total:</h2>";
+    echo "<h3>".$total."</h3>";
+    ?>
 
     <a class='buttonlink' href="checkout.php">Go to Checkout</a>
   </body>
