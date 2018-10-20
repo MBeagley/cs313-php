@@ -32,8 +32,9 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 {
   if ($row['password'] == $password) {
     echo "<h2>You are logged in as ".$username."</h2>";
+  } else {
+    echo "<h2>Login error</h2>";
   }
-  echo 'user: ' . $row['username'] . ' password: ' . $row['password'] . '<br/>';
 }
 
 echo '<script>console.log("end")</script>';
