@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="script.js"></script>
+  <title>Overwatch Character Picker</title>
+</head>
+<body>
+
+  <button type="button" onclick="toggleHidden('login', 'register')">Login</button>
+  <button type="button" onclick="toggleHidden('register', 'login')">Register</button>
+
+  <div id="login" style="display:none;">
+    <form action="login_action.php">
+      <h2>Login</h2><br>
+      Username:<br>
+      <input type="text" name="username">
+      <br>
+      Password:<br>
+      <input type="text" name="password">
+      <br><br>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+  <div id="register" style="display:none;">
+    <form action="/action_page.php">
+      <h2>Register</h2><br>
+      Username:<br>
+      <input type="text" name="username">
+      <br>
+      Password:<br>
+      <input type="text" name="password">
+      <br>
+      Confirm Password:<br>
+      <input type="text" name="passwordConfirm">
+      <br><br>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+</body>
+</html>
