@@ -33,7 +33,7 @@ body, html {
   padding: 0 10px;
 }
 
-/* Float six columns side by side */
+/* Float five columns side by side */
 .allyColumn {
   float: left;
   width: 20%;
