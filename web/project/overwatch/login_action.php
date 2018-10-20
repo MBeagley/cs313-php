@@ -28,13 +28,16 @@ catch (PDOException $ex)
 echo '<script>console.log("db connect")</script>';
 
 $statement = $db->query('SELECT username, password FROM players WHERE username = $username');
+echo '<script>console.log("made statement")</script>';
 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 {
+  echo '<script>console.log("in while loop")</script>';
   if ($row['password'] == $password) {
     echo "<h2>You are logged in as ".$username."</h2>";
   } else {
     echo "<h2>Login error</h2>";
   }
+  echo '<script>console.log("end while loop")</script>';
 }
 
 echo '<script>console.log("end")</script>';
