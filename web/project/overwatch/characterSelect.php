@@ -55,7 +55,9 @@ catch (PDOException $ex)
           ?>
         </select>
       </div>
+    </div>
 
+    <div class="enemyColumn">
       <div class="card">
         <h3>Enemy 2</h3>
         <select>
@@ -67,7 +69,9 @@ catch (PDOException $ex)
           ?>
         </select>
       </div>
+    </div>
 
+    <div class="enemyColumn">
       <div class="card">
         <h3>Enemy 3</h3>
         <select>
@@ -79,7 +83,9 @@ catch (PDOException $ex)
           ?>
         </select>
       </div>
+    </div>
 
+    <div class="enemyColumn">
       <div class="card">
         <h3>Enemy 4</h3>
         <select>
@@ -91,7 +97,9 @@ catch (PDOException $ex)
           ?>
         </select>
       </div>
+    </div>
 
+    <div class="enemyColumn">
       <div class="card">
         <h3>Enemy 5</h3>
         <select>
@@ -103,7 +111,9 @@ catch (PDOException $ex)
           ?>
         </select>
       </div>
+    </div>
 
+    <div class="enemyColumn">
       <div class="card">
         <h3>Enemy 6</h3>
         <select>
@@ -194,6 +204,6 @@ catch (PDOException $ex)
   </div>
 
   <hr/>
-  
+
 </body>
 </html>
