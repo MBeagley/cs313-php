@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+echo '<script>console.log("start")</script>';
+
 try
 {
   $dbUrl = getenv('DATABASE_URL');
@@ -23,6 +25,8 @@ catch (PDOException $ex)
   die();
 }
 
+echo '<script>console.log("db connect")</script>';
+
 $statement = $db->query('SELECT username, password FROM players WHERE username = $username');
 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 {
@@ -31,5 +35,7 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
   }
   echo 'user: ' . $row['username'] . ' password: ' . $row['password'] . '<br/>';
 }
+
+echo '<script>console.log("end")</script>';
 
 ?>
