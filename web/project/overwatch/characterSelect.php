@@ -35,17 +35,163 @@ catch (PDOException $ex)
   <div class="header-image">
     <div class="header-text">
       <h1 style="font-size:50px">Overwatch Character Picker</h1>
+      <p>Matt Beagley's project for CS313</p>
     </div>
   </div>
 
-  <select>
-    <?php
-    foreach ($db->query('SELECT * FROM characters') as $row)
-    {
-      echo "<option value='".$row['id']."'>".$row['name']."</option>";
-    }
-    ?>
-  </select>
+  <hr/>
+  <h2>Enemy Team</h2>
+  <hr/>
+  <div class="row">
+    <div class="enemyColumn">
+      <div class="card">
+        <h3>Enemy 1</h3>
+        <select>
+          <?php
+          foreach ($db->query('SELECT * FROM characters') as $row)
+          {
+            echo "<option value='".$row['id']."'>".$row['name']."</option>";
+          }
+          ?>
+        </select>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Enemy 2</h3>
+      <select>
+        <?php
+        foreach ($db->query('SELECT * FROM characters') as $row)
+        {
+          echo "<option value='".$row['id']."'>".$row['name']."</option>";
+        }
+        ?>
+      </select>
+    </div>
+
+    <div class="card">
+      <h3>Enemy 3</h3>
+      <select>
+        <?php
+        foreach ($db->query('SELECT * FROM characters') as $row)
+        {
+          echo "<option value='".$row['id']."'>".$row['name']."</option>";
+        }
+        ?>
+      </select>
+    </div>
+
+    <div class="card">
+      <h3>Enemy 4</h3>
+      <select>
+        <?php
+        foreach ($db->query('SELECT * FROM characters') as $row)
+        {
+          echo "<option value='".$row['id']."'>".$row['name']."</option>";
+        }
+        ?>
+      </select>
+    </div>
+
+    <div class="card">
+      <h3>Enemy 5</h3>
+      <select>
+        <?php
+        foreach ($db->query('SELECT * FROM characters') as $row)
+        {
+          echo "<option value='".$row['id']."'>".$row['name']."</option>";
+        }
+        ?>
+      </select>
+    </div>
+
+    <div class="card">
+      <h3>Enemy 6</h3>
+      <select>
+        <?php
+        foreach ($db->query('SELECT * FROM characters') as $row)
+        {
+          echo "<option value='".$row['id']."'>".$row['name']."</option>";
+        }
+        ?>
+      </select>
+    </div>
+  </div>
+
+  <hr/>
+  <h2>Ally Team</h2>
+  <hr/>
+  <div class="row">
+    <div class="allyColumn">
+      <div class="card">
+        <h3>Ally 1</h3>
+        <select>
+          <?php
+          foreach ($db->query('SELECT * FROM characters') as $row)
+          {
+            echo "<option value='".$row['id']."'>".$row['name']."</option>";
+          }
+          ?>
+        </select>
+      </div>
+    </div>
+
+    <div class="allyColumn">
+      <div class="card">
+        <h3>Ally 2</h3>
+        <select>
+          <?php
+          foreach ($db->query('SELECT * FROM characters') as $row)
+          {
+            echo "<option value='".$row['id']."'>".$row['name']."</option>";
+          }
+          ?>
+        </select>
+      </div>
+    </div>
+
+    <div class="allyColumn">
+      <div class="card">
+        <h3>Ally 3</h3>
+        <select>
+          <?php
+          foreach ($db->query('SELECT * FROM characters') as $row)
+          {
+            echo "<option value='".$row['id']."'>".$row['name']."</option>";
+          }
+          ?>
+        </select>
+      </div>
+    </div>
+
+    <div class="allyColumn">
+      <div class="card">
+        <h3>Ally 4</h3>
+        <select>
+          <?php
+          foreach ($db->query('SELECT * FROM characters') as $row)
+          {
+            echo "<option value='".$row['id']."'>".$row['name']."</option>";
+          }
+          ?>
+        </select>
+      </div>
+    </div>
+
+    <div class="allyColumn">
+      <div class="card">
+        <h3>Ally 5</h3>
+        <select>
+          <?php
+          foreach ($db->query('SELECT * FROM characters') as $row)
+          {
+            echo "<option value='".$row['id']."'>".$row['name']."</option>";
+          }
+          ?>
+        </select>
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>
