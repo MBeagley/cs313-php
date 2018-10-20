@@ -34,7 +34,7 @@ catch (PDOException $ex)
 
   <select>
     <?php
-    foreach ($db->query('SELECT id, name FROM characters') as $row)
+    foreach ($db->query('SELECT * FROM characters') as $row)
     {
       echo "<option value='".$row['id']."'>".$row['name']."</option>";
     }
