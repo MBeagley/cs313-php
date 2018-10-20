@@ -40,7 +40,7 @@ catch (PDOException $ex)
   </div>
 
   <hr/>
-  <h2>Enemy Team</h2>
+  <h2 align="center">Enemy Team</h2>
   <hr/>
   <div class="row">
     <div class="enemyColumn">
@@ -55,71 +55,71 @@ catch (PDOException $ex)
           ?>
         </select>
       </div>
-    </div>
 
-    <div class="card">
-      <h3>Enemy 2</h3>
-      <select>
-        <?php
-        foreach ($db->query('SELECT * FROM characters') as $row)
-        {
-          echo "<option value='".$row['id']."'>".$row['name']."</option>";
-        }
-        ?>
-      </select>
-    </div>
+      <div class="card">
+        <h3>Enemy 2</h3>
+        <select>
+          <?php
+          foreach ($db->query('SELECT * FROM characters') as $row)
+          {
+            echo "<option value='".$row['id']."'>".$row['name']."</option>";
+          }
+          ?>
+        </select>
+      </div>
 
-    <div class="card">
-      <h3>Enemy 3</h3>
-      <select>
-        <?php
-        foreach ($db->query('SELECT * FROM characters') as $row)
-        {
-          echo "<option value='".$row['id']."'>".$row['name']."</option>";
-        }
-        ?>
-      </select>
-    </div>
+      <div class="card">
+        <h3>Enemy 3</h3>
+        <select>
+          <?php
+          foreach ($db->query('SELECT * FROM characters') as $row)
+          {
+            echo "<option value='".$row['id']."'>".$row['name']."</option>";
+          }
+          ?>
+        </select>
+      </div>
 
-    <div class="card">
-      <h3>Enemy 4</h3>
-      <select>
-        <?php
-        foreach ($db->query('SELECT * FROM characters') as $row)
-        {
-          echo "<option value='".$row['id']."'>".$row['name']."</option>";
-        }
-        ?>
-      </select>
-    </div>
+      <div class="card">
+        <h3>Enemy 4</h3>
+        <select>
+          <?php
+          foreach ($db->query('SELECT * FROM characters') as $row)
+          {
+            echo "<option value='".$row['id']."'>".$row['name']."</option>";
+          }
+          ?>
+        </select>
+      </div>
 
-    <div class="card">
-      <h3>Enemy 5</h3>
-      <select>
-        <?php
-        foreach ($db->query('SELECT * FROM characters') as $row)
-        {
-          echo "<option value='".$row['id']."'>".$row['name']."</option>";
-        }
-        ?>
-      </select>
-    </div>
+      <div class="card">
+        <h3>Enemy 5</h3>
+        <select>
+          <?php
+          foreach ($db->query('SELECT * FROM characters') as $row)
+          {
+            echo "<option value='".$row['id']."'>".$row['name']."</option>";
+          }
+          ?>
+        </select>
+      </div>
 
-    <div class="card">
-      <h3>Enemy 6</h3>
-      <select>
-        <?php
-        foreach ($db->query('SELECT * FROM characters') as $row)
-        {
-          echo "<option value='".$row['id']."'>".$row['name']."</option>";
-        }
-        ?>
-      </select>
+      <div class="card">
+        <h3>Enemy 6</h3>
+        <select>
+          <?php
+          foreach ($db->query('SELECT * FROM characters') as $row)
+          {
+            echo "<option value='".$row['id']."'>".$row['name']."</option>";
+          }
+          ?>
+        </select>
+      </div>
     </div>
   </div>
 
   <hr/>
-  <h2>Ally Team</h2>
+  <h2 align="center">Ally Team</h2>
   <hr/>
   <div class="row">
     <div class="allyColumn">
