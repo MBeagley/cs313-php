@@ -29,7 +29,7 @@ body, html {
 /* Float six columns side by side */
 .enemyColumn {
   float: left;
-  width: 15%;
+  width: 16%;
   padding: 0 10px;
 }
 
@@ -52,7 +52,12 @@ body, html {
 
 /* Responsive columns */
 @media screen and (max-width: 600px) {
-  .column {
+  .enemyColumn {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+  .allyColumn {
     width: 100%;
     display: block;
     margin-bottom: 20px;

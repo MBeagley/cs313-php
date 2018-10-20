@@ -193,5 +193,7 @@ catch (PDOException $ex)
     </div>
   </div>
 
+  <hr/>
+  
 </body>
 </html>
