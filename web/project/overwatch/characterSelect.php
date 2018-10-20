@@ -28,13 +28,13 @@ catch (PDOException $ex)
 <head>
   <link rel="stylesheet" type="text/css" href="style.css">
   <script src="script.js"></script>
-  <title>Overwatch Character Picker</title>
+  <title>Overwatch Character Selector</title>
 </head>
 <body>
 
   <div class="header-image">
     <div class="header-text">
-      <h1 style="font-size:50px">Overwatch Character Picker</h1>
+      <h1 style="font-size:50px">Overwatch Character Selector</h1>
       <p>Matt Beagley's project for CS313</p>
     </div>
   </div>

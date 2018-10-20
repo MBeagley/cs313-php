@@ -29,7 +29,7 @@ body, html {
 /* Float six columns side by side */
 .enemyColumn {
   float: left;
-  width: 16%;
+  width: 16.6%;
   padding: 0 10px;
 }
 
