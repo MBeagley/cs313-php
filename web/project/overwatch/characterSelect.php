@@ -32,6 +32,12 @@ catch (PDOException $ex)
 </head>
 <body>
 
+  <div class="header-image">
+    <div class="header-text">
+      <h1 style="font-size:50px">Overwatch Character Picker</h1>
+    </div>
+  </div>
+
   <select>
     <?php
     foreach ($db->query('SELECT * FROM characters') as $row)
