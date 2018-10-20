@@ -27,7 +27,7 @@ catch (PDOException $ex)
 
 echo '<script>console.log("db connect")</script>';
 
-$statement = $db->query("SELECT * FROM 'players' WHERE 'username' = '" .$_POST["username"]. "';");
+$statement = $db->query("SELECT * FROM 'players' WHERE 'username' = '" .mysql_escape_string($_POST['username']). "';");
 echo '<script>console.log("made statement")</script>';
 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 {
