@@ -43,7 +43,23 @@ catch (PDOException $ex)
   <h2 align="center">Enemy Team</h2>
   <hr/>
   <div class="row">
-    <div class="enemyColumn">
+    <?php
+    for ($x = 1; $x <= 6; $x++) {
+      echo "<div class='enemyColumn'>";
+      echo "<div class='card'>";
+      echo "<h3>Enemy ".$x."</h3>";
+      echo "<img id='enemyIcon".$x."' src='images/1.png'>";
+      echo "<select id='enemy".$x."' onchange='displayIcon('enemyIcon".$x."', 'enemy".$x."')''>";
+      foreach ($db->query('SELECT * FROM characters') as $row)
+      {
+        echo "<option value='".$row['id']."'>".$row['name']."</option>";
+      }
+      echo "</select>";
+      echo "</div>";
+      echo "</div>";
+    }
+    ?>
+    <!-- <div class="enemyColumn">
       <div class="card">
         <h3>Enemy 1</h3>
         <img id="enemyIcon1" src="images/1.png">
@@ -126,7 +142,7 @@ catch (PDOException $ex)
           ?>
         </select>
       </div>
-    </div>
+    </div> -->
   </div>
 
   <hr/>
