@@ -72,6 +72,10 @@ body, html {
   background-color: #f1f1f1;
 }
 
+.icon {
+  background-color: #f99e1a;
+}
+
 /* Custom dropdown */
 .custom-dropdown {
   position: relative;
