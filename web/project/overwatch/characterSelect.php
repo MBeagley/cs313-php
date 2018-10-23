@@ -46,7 +46,8 @@ catch (PDOException $ex)
     <div class="enemyColumn">
       <div class="card">
         <h3>Enemy 1</h3>
-        <select>
+        <img id="enemyIcon1" src="1.png">
+        <select id="enemy1" onchange="displayIcon('enemyIcon1', document.getElementById('enemy1').value)">
           <?php
           foreach ($db->query('SELECT * FROM characters') as $row)
           {

@@ -11,3 +11,7 @@ function toggleHidden(idOn, idOff) {
         off.style.display = "none";
     }
 }
+
+function displayIcon(picId, charId) {
+    document.getElementById(picId).src == charId + ".png";
+}
