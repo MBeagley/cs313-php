@@ -71,7 +71,7 @@ catch (PDOException $ex)
       echo "<div class='card'>";
       echo "<h3>Ally ".$x."</h3>";
       echo "<img id='allyIcon".$x."' src='images/1.png'>";
-      echo "<select id='ally".$x."' onchange=\"displayIcon('enemyIcon".$x."', 'ally".$x."')\">";
+      echo "<select id='ally".$x."' onchange=\"displayIcon('allyIcon".$x."', 'ally".$x."')\">";
       foreach ($db->query('SELECT * FROM characters') as $row)
       {
         echo "<option value='".$row['id']."'>".$row['name']."</option>";
