@@ -125,7 +125,7 @@ body, html {
   top: 0;
   bottom: 0;
   border-radius: 0 3px 3px 0;
-  background-color: #e08906;
+  background-color: rgba(0,0,0,.2);
 }
 
 .custom-dropdown::after {
