@@ -65,75 +65,22 @@ catch (PDOException $ex)
   <h2 align="center">Ally Team</h2>
   <hr/>
   <div class="row">
-    <div class="allyColumn">
-      <div class="card">
-        <h3>Ally 1</h3>
-        <select>
-          <?php
-          foreach ($db->query('SELECT * FROM characters') as $row)
-          {
-            echo "<option value='".$row['id']."'>".$row['name']."</option>";
-          }
-          ?>
-        </select>
-      </div>
-    </div>
-
-    <div class="allyColumn">
-      <div class="card">
-        <h3>Ally 2</h3>
-        <select>
-          <?php
-          foreach ($db->query('SELECT * FROM characters') as $row)
-          {
-            echo "<option value='".$row['id']."'>".$row['name']."</option>";
-          }
-          ?>
-        </select>
-      </div>
-    </div>
-
-    <div class="allyColumn">
-      <div class="card">
-        <h3>Ally 3</h3>
-        <select>
-          <?php
-          foreach ($db->query('SELECT * FROM characters') as $row)
-          {
-            echo "<option value='".$row['id']."'>".$row['name']."</option>";
-          }
-          ?>
-        </select>
-      </div>
-    </div>
-
-    <div class="allyColumn">
-      <div class="card">
-        <h3>Ally 4</h3>
-        <select>
-          <?php
-          foreach ($db->query('SELECT * FROM characters') as $row)
-          {
-            echo "<option value='".$row['id']."'>".$row['name']."</option>";
-          }
-          ?>
-        </select>
-      </div>
-    </div>
-
-    <div class="allyColumn">
-      <div class="card">
-        <h3>Ally 5</h3>
-        <select>
-          <?php
-          foreach ($db->query('SELECT * FROM characters') as $row)
-          {
-            echo "<option value='".$row['id']."'>".$row['name']."</option>";
-          }
-          ?>
-        </select>
-      </div>
-    </div>
+    <?php
+    for ($x = 1; $x <= 5; $x++) {
+      echo "<div class='allyColumn'>";
+      echo "<div class='card'>";
+      echo "<h3>Ally ".$x."</h3>";
+      echo "<img id='allyIcon".$x."' src='images/1.png'>";
+      echo "<select id='ally".$x."' onchange=\"displayIcon('enemyIcon".$x."', 'ally".$x."')\">";
+      foreach ($db->query('SELECT * FROM characters') as $row)
+      {
+        echo "<option value='".$row['id']."'>".$row['name']."</option>";
+      }
+      echo "</select>";
+      echo "</div>";
+      echo "</div>";
+    }
+    ?>
   </div>
 
   <hr/>
