@@ -15,6 +15,5 @@ function toggleHidden(idOn, idOff) {
 function displayIcon(picId, selectId) {
     var charId = document.getElementById(selectId).value;
     var newSrc = "images/" + charId + ".png"
-    alert(newSrc);
-    document.getElementById(picId).src == newSrc;
+    document.getElementById(picId).src = newSrc;
 }
