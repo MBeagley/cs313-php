@@ -42,52 +42,55 @@ catch (PDOException $ex)
   <hr/>
   <h2 align="center">Enemy Team</h2>
   <hr/>
-  <div class="row">
-    <?php
-    for ($x = 1; $x <= 6; $x++) {
-      echo "<div class='enemyColumn'>";
-      echo "<div class='card'>";
-      echo "<h3>Enemy ".$x."</h3>";
-      echo "<img class='icon' id='enemyIcon".$x."' src='images/1.png'>";
-      echo "<span class='custom-dropdown'>";
-      echo "<select id='enemy".$x."' onchange=\"displayIcon('enemyIcon".$x."', 'enemy".$x."')\">";
-      foreach ($db->query('SELECT * FROM characters') as $row)
-      {
-        echo "<option value='".$row['id']."'>".$row['name']."</option>";
+  <form action="/action_page.php" method="post">
+    <div class="row">
+      <?php
+      for ($x = 1; $x <= 6; $x++) {
+        echo "<div class='enemyColumn'>";
+        echo "<div class='card'>";
+        echo "<h3>Enemy ".$x."</h3>";
+        echo "<img class='icon' id='enemyIcon".$x."' src='images/1.png'>";
+        echo "<span class='custom-dropdown'>";
+        echo "<select id='enemy".$x."' onchange=\"displayIcon('enemyIcon".$x."', 'enemy".$x."')\">";
+        foreach ($db->query('SELECT * FROM characters') as $row)
+        {
+          echo "<option value='".$row['id']."'>".$row['name']."</option>";
+        }
+        echo "</select>";
+        echo "</span>";
+        echo "</div>";
+        echo "</div>";
       }
-      echo "</select>";
-      echo "</span>";
-      echo "</div>";
-      echo "</div>";
-    }
-    ?>
-  </div>
+      ?>
+    </div>
 
-  <hr/>
-  <h2 align="center">Ally Team</h2>
-  <hr/>
-  <div class="row">
-    <?php
-    for ($x = 1; $x <= 5; $x++) {
-      echo "<div class='allyColumn'>";
-      echo "<div class='card'>";
-      echo "<h3>Ally ".$x."</h3>";
-      echo "<img class='icon' id='allyIcon".$x."' src='images/1.png' style='width:100%'>";
-      echo "<span class='custom-dropdown'>";
-      echo "<select id='ally".$x."' onchange=\"displayIcon('allyIcon".$x."', 'ally".$x."')\">";
-      foreach ($db->query('SELECT * FROM characters') as $row)
-      {
-        echo "<option value='".$row['id']."'>".$row['name']."</option>";
+    <hr/>
+    <h2 align="center">Ally Team</h2>
+    <hr/>
+    <div class="row">
+      <?php
+      for ($x = 1; $x <= 5; $x++) {
+        echo "<div class='allyColumn'>";
+        echo "<div class='card'>";
+        echo "<h3>Ally ".$x."</h3>";
+        echo "<img class='icon' id='allyIcon".$x."' src='images/1.png' style='width:100%'>";
+        echo "<span class='custom-dropdown'>";
+        echo "<select id='ally".$x."' onchange=\"displayIcon('allyIcon".$x."', 'ally".$x."')\">";
+        foreach ($db->query('SELECT * FROM characters') as $row)
+        {
+          echo "<option value='".$row['id']."'>".$row['name']."</option>";
+        }
+        echo "</select>";
+        echo "</span>";
+        echo "</div>";
+        echo "</div>";
       }
-      echo "</select>";
-      echo "</span>";
-      echo "</div>";
-      echo "</div>";
-    }
-    ?>
-  </div>
-
-  <hr/>
+      ?>
+    </div>
+    <hr/>
+    <input type="submit" value="Submit">
+    <hr/>
+  </form>
 
 </body>
 </html>
