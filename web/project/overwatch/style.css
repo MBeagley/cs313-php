@@ -138,6 +138,10 @@ body, html {
   color: rgba(0,0,0,.6);
 }
 
+.buttonHolder {
+ text-align: center;
+}
+
 input[type=submit] {
   width: 50%;
   background-color: #405275;
