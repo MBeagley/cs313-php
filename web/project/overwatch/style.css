@@ -73,6 +73,7 @@ body, html {
 }
 
 .icon {
+  width: 100%;
   border-radius: 25px;
   background-color: #f99e1a;
 }
