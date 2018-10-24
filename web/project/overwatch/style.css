@@ -23,7 +23,7 @@ body, html {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #f99e1a;
+  color: white;
 }
 
 /* Float six columns side by side */
@@ -86,7 +86,7 @@ body, html {
 }
 
 .custom-dropdown select {
-  background-color: #f99e1a;
+  background-color: #405275;
   color: #fff;
   font-size: inherit;
   padding: .5em;
