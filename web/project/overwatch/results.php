@@ -32,7 +32,7 @@ for ($x = 1; $x <= 6; $x++) {
 
   //print_r($rows);
   $test = $rows['weak_against'];
-  print $test;
+  print_r($test);
   $suggestList[] = $rows[weak_against];
   //print_r($suggestList);
 }
