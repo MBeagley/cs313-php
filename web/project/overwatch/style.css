@@ -139,7 +139,7 @@ body, html {
 }
 
 input[type=submit] {
-    width: 100%;
+    width: 50%;
     background-color: #405275;
     color: white;
     padding: 14px 20px;
