@@ -22,6 +22,17 @@ catch (PDOException $ex)
   die();
 }
 
+$suggestList = array();
+
+for ($x = 1; $x <= 6; $x++) {
+  $id = "enemy" . $x;
+  $stmt = $db->prepare('SELECT * FROM characters WHERE id=:id');
+  $stmt->execute(array(':id' => $_POST[$id]));
+  $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+  array_push($suggestList, $rows['weak_against']);
+}
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -40,18 +51,7 @@ catch (PDOException $ex)
   </div>
   <hr/>
   <?php
-  echo "<p>Enemy 1: ".$_POST["enemy1"]."</p>";
-  echo "<p>Enemy 2: ".$_POST["enemy2"]."</p>";
-  echo "<p>Enemy 3: ".$_POST["enemy3"]."</p>";
-  echo "<p>Enemy 4: ".$_POST["enemy4"]."</p>";
-  echo "<p>Enemy 5: ".$_POST["enemy5"]."</p>";
-  echo "<p>Enemy 6: ".$_POST["enemy6"]."</p>";
-  echo "<br/>";
-  echo "<p>Ally 1: ".$_POST["ally1"]."</p>";
-  echo "<p>Ally 2: ".$_POST["ally2"]."</p>";
-  echo "<p>Ally 3: ".$_POST["ally3"]."</p>";
-  echo "<p>Ally 4: ".$_POST["ally4"]."</p>";
-  echo "<p>Ally 5: ".$_POST["ally5"]."</p>";
+  print_r($suggestList);
   ?>
 
 </body>
