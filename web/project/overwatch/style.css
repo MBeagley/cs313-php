@@ -144,7 +144,8 @@ body, html {
 
 input[type=submit] {
   width: 50%;
-  background-color: #405275;
+  background-color: #405275;  
+  font-size: inherit;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;

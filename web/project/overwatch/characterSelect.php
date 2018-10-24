@@ -42,7 +42,7 @@ catch (PDOException $ex)
   <hr/>
   <h2 align="center">Enemy Team</h2>
   <hr/>
-  <form action="/action_page.php" method="post">
+  <form action="results.php" method="post" id="myForm">
     <div class="row">
       <?php
       for ($x = 1; $x <= 6; $x++) {
@@ -51,7 +51,7 @@ catch (PDOException $ex)
         echo "<h3>Enemy ".$x."</h3>";
         echo "<img class='icon' id='enemyIcon".$x."' src='images/1.png'>";
         echo "<span class='custom-dropdown'>";
-        echo "<select id='enemy".$x."' onchange=\"displayIcon('enemyIcon".$x."', 'enemy".$x."')\">";
+        echo "<select name='enemy".$x."' form='myForm' id='enemy".$x."' onchange=\"displayIcon('enemyIcon".$x."', 'enemy".$x."')\">";
         foreach ($db->query('SELECT * FROM characters') as $row)
         {
           echo "<option value='".$row['id']."'>".$row['name']."</option>";
@@ -75,7 +75,7 @@ catch (PDOException $ex)
         echo "<h3>Ally ".$x."</h3>";
         echo "<img class='icon' id='allyIcon".$x."' src='images/1.png' style='width:100%'>";
         echo "<span class='custom-dropdown'>";
-        echo "<select id='ally".$x."' onchange=\"displayIcon('allyIcon".$x."', 'ally".$x."')\">";
+        echo "<select name='ally".$x."' form='myForm' id='ally".$x."' onchange=\"displayIcon('allyIcon".$x."', 'ally".$x."')\">";
         foreach ($db->query('SELECT * FROM characters') as $row)
         {
           echo "<option value='".$row['id']."'>".$row['name']."</option>";
