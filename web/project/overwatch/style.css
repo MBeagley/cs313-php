@@ -137,3 +137,17 @@ body, html {
 .custom-dropdown::after {
   color: rgba(0,0,0,.6);
 }
+
+.sumbitButton {
+    background-color: #405275;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
