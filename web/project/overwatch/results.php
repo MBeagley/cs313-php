@@ -31,7 +31,7 @@ for ($x = 1; $x <= 6; $x++) {
   $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
   print_r($rows);
-  $suggestList[] = $rows['weak_against'];
+  $suggestList[] = $rows[0]['weak_against'];
   //print_r($suggestList);
 }
 
