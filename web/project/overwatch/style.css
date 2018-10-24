@@ -3,9 +3,9 @@
 }
 
 body, html {
-    height: 100%;
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .header-image {
@@ -105,7 +105,7 @@ body, html {
 }
 /*Hiding the select arrow for IE10*/
 .custom-dropdown select::-ms-expand {
-    display: none;
+  display: none;
 }
 
 .custom-dropdown::before,
@@ -139,12 +139,12 @@ body, html {
 }
 
 input[type=submit] {
-    width: 50%;
-    background-color: #405275;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
+  width: 50%;
+  background-color: #405275;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
 }

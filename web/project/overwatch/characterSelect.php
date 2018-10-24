@@ -88,7 +88,7 @@ catch (PDOException $ex)
       ?>
     </div>
     <hr/>
-    <input type="submit" value="Submit">
+    <input align="center" type="submit" value="Submit">
     <hr/>
   </form>
 
