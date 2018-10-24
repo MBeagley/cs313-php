@@ -30,7 +30,7 @@ for ($x = 1; $x <= 6; $x++) {
   $stmt->execute(array(':id' => $_POST[$id]));
   $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-  print($rows[3]);
+  print_r($rows);
   $suggestList[] = $rows['weak_against'];
   //print_r($suggestList);
 }
