@@ -23,7 +23,7 @@ catch (PDOException $ex)
 }
 
 $suggestList = array();
-$teamStrengths
+$teamStrengths = array();
 
 for ($x = 1; $x <= 6; $x++) {
   $id = "enemy" . $x;
@@ -36,21 +36,21 @@ for ($x = 1; $x <= 6; $x++) {
 
 $suggestList = array_unique($suggestList);
 
-// for ($x = 1; $x <= 5; $x++) {
-//   $id = "ally" . $x;
-//   $stmt = $db->prepare('SELECT * FROM characters WHERE id=:id');
-//   $stmt->execute(array(':id' => $_POST[$id]));
-//   $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+for ($x = 1; $x <= 5; $x++) {
+  $id = "ally" . $x;
+  $stmt = $db->prepare('SELECT * FROM characters WHERE id=:id');
+  $stmt->execute(array(':id' => $_POST[$id]));
+  $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-//   $teamStrengths[] = $rows[0]['strong_against'];
-// }
+  $teamStrengths[] = $rows[0]['strong_against'];
+}
 
-// $arrlength = count($teamStrengths);
-// for($x = 0; $x < $arrlength; $x++) {
-//   if (($key = array_search($teamStrengths[$x], $suggestList)) !== false) {
-//     unset($suggestList[$key]);
-//   }
-// }
+$arrlength = count($teamStrengths);
+for($x = 0; $x < $arrlength; $x++) {
+  if (($key = array_search($teamStrengths[$x], $suggestList)) !== false) {
+    unset($suggestList[$key]);
+  }
+}
 ?>
 <!DOCTYPE html>
 <html>
