@@ -1,8 +1,6 @@
 <?php
 session_start();
 
-//echo '<script>console.log("start")</script>';
-
 try
 {
   $dbUrl = getenv('DATABASE_URL');
@@ -25,21 +23,15 @@ catch (PDOException $ex)
   die();
 }
 
-//echo '<script>console.log("db connect")</script>';
+$stmt = $db->prepare('SELECT * FROM players WHERE username=:username');
+$stmt->execute(array(':username' => $_POST['username']));
+$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-$statement = $db->query("SELECT * FROM 'players' WHERE 'username' = '" .mysql_escape_string($_POST['username']). "';");
-//echo '<script>console.log("made statement")</script>';
-while ($row = $statement->fetch(PDO::FETCH_ASSOC))
-{
-  echo '<script>console.log("in while loop")</script>';
-  if ($row['password'] == $password) {
-    echo "<h2>You are logged in as ".$username."</h2>";
-  } else {
-    echo "<h2>Login error</h2>";
-  }
-  //echo '<script>console.log("end while loop")</script>';
+if ($rows[0]['password'] == $_POST['password']) {
+  echo "<h1>Logged in as".$_POST['username']."</h1>";
 }
-
-//echo '<script>console.log("end")</script>';
+else {
+  echo "<h1>Login Error</h1>"
+}
 
 ?>
