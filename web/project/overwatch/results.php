@@ -70,17 +70,16 @@ $suggestList = array_unique($suggestList);
   <hr/>
   <h2 align="center">Suggested Characters</h2>
   <hr/>
-  <?php
-  foreach ($suggestList as $x) {
-    echo "<div class='row'>";
-    echo "<div class='enemyColumn'>";
-    echo "<div class='card'>";
-    echo "<img class='icon' id='suggestIcon".$x."' src='images/".$x.".png'>";
-    echo "</div>";
-    echo "</div>";
-    echo "</div>";
-  }  
-  ?>
+  <div class='row'>
+    <?php
+    foreach ($suggestList as $x) {
+      echo "<div class='enemyColumn'>";
+      echo "<div class='card'>";
+      echo "<img class='icon' id='suggestIcon".$x."' src='images/".$x.".png'>";
+      echo "</div>";      
+    }
+    ?>
+  </div>
 
 </body>
 </html>
