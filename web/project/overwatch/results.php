@@ -39,12 +39,14 @@ for ($x = 1; $x <= 6; $x++) {
 }
 
 print_r($suggestList);
+print_r($enemyStrengths);
 
 //remove duplicates
 $suggestList = array_unique($suggestList);
 $suggestList = array_unique($enemyStrengths);
 
 print_r($suggestList);
+print_r($enemyStrengths);
 
 foreach ($enemyStrengths as $x) {
   if (($key = array_search($x, $suggestList)) !== false) {
