@@ -46,14 +46,20 @@ $suggestList = array_unique($enemyStrengths);
 
 print_r($suggestList);
 
+foreach ($enemyStrengths as $x) {
+  if (($key = array_search($x, $suggestList)) !== false) {
+    unset($suggestList[$key]);
+  }  
+}
+
 
 //remove if enemy team is strong_against
-$arrlength = count($enemyStrengths);
-for($x = 0; $x < $arrlength; $x++) {
-  if (($key = array_search($enemyStrengths[$x], $suggestList)) !== false) {
-    unset($suggestList[$key]);
-  }
-}
+// $arrlength = count($enemyStrengths);
+// for($x = 0; $x < $arrlength; $x++) {
+//   if (($key = array_search($enemyStrengths[$x], $suggestList)) !== false) {
+//     unset($suggestList[$key]);
+//   }
+// }
 
 print_r($suggestList);
 
