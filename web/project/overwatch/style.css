@@ -40,6 +40,13 @@ body, html {
   padding: 0 10px;
 }
 
+/* Float five columns side by side */
+.loginColumn {
+  float: left;
+  width: 50%;
+  padding: 0 10px;
+}
+
 /* Remove extra left and right margins, due to padding */
 .row {margin: 0 -5px;}
 
@@ -58,6 +65,11 @@ body, html {
     margin-bottom: 20px;
   }
   .allyColumn {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+  .loginColumn {
     width: 100%;
     display: block;
     margin-bottom: 20px;
@@ -143,7 +155,7 @@ body, html {
 }
 
 input[type=submit] {
-  width: 50%;
+  width: 25%;
   background-color: #405275;  
   font-size: inherit;
   color: white;
