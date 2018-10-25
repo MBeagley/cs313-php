@@ -70,7 +70,7 @@ $suggestList = array_unique($suggestList);
   <hr/>
   <h2 align="center">Suggested Characters</h2>
   <hr/>
-  <div align="center" class='row'>
+  <div class='row'>
     <?php
     foreach ($suggestList as $x) {
       echo "<div class='enemyColumn'>";
