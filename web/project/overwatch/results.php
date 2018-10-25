@@ -25,6 +25,7 @@ catch (PDOException $ex)
 //create arrays
 $suggestList = array();
 $enemyStrengths = array();
+$allyTeam = array();
 
 //loop through enemy array
 for ($x = 1; $x <= 6; $x++) {
@@ -39,42 +40,26 @@ for ($x = 1; $x <= 6; $x++) {
 }
 
 print_r($suggestList);
-print_r($enemyStrengths);
 
 //remove duplicates
 $suggestList = array_unique($suggestList);
 $suggestList = array_unique($enemyStrengths);
 
 print_r($suggestList);
-print_r($enemyStrengths);
-
-foreach ($enemyStrengths as $x) {
-  if (($key = array_search($x, $suggestList)) !== false) {
-    print("value:" . $x);
-    print("key:" . $key);
-    unset($suggestList[$key]);
-  }  
-}
-
 
 //remove if enemy team is strong_against
-// $arrlength = count($enemyStrengths);
-// for($x = 0; $x < $arrlength; $x++) {
-//   if (($key = array_search($enemyStrengths[$x], $suggestList)) !== false) {
-//     unset($suggestList[$key]);
-//   }
-// }
+$suggestList = array_diff($suggestList, $enemyStrengths);
 
 print_r($suggestList);
 
-
-//remove if ally is playing
+//fill ally team array
 for ($x = 1; $x <= 5; $x++) {
   $id = "ally" . $x;
-  if (($key = array_search($_POST[$id], $suggestList)) !== false) {
-    unset($suggestList[$key]);
-  }
+  $suggestList[] = $_POST[$id];
 }
+
+//remove if ally is playing
+$suggestList = array_diff($suggestList, $allyTeam);
 
 print_r($suggestList);
 
