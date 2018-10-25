@@ -24,10 +24,10 @@ session_start();
           <h3>Login</h3>
           <form method="post" action="login_action.php">
             Username:<br>
-            <input type="text" name="username">
+            <input type="text" name="loginUsername">
             <br>
             Password:<br>
-            <input type="text" name="password">
+            <input type="text" name="loginPassword">
             <br><br>
             <input type="submit" value="Submit">
           </form>
@@ -41,10 +41,10 @@ session_start();
           <h3>Register</h3>
           <form method="post" action="login_action.php">
             Username:<br>
-            <input type="text" name="username">
+            <input type="text" name="registerUsername">
             <br>
             Password:<br>
-            <input type="text" name="password">
+            <input type="text" name="registerPassword">
             <br><br>
             <input type="submit" value="Submit">
           </form>

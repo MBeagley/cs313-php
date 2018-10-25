@@ -27,7 +27,7 @@ catch (PDOException $ex)
 echo "<script>console.log('db connect');</script>";
 
 $stmt = $db->prepare('SELECT * FROM players WHERE username=:username');
-$stmt->execute(array(':username' => $_POST['username']));
+$stmt->execute(array(':username' => $_POST['loginUsername']));
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 echo "<script>console.log('statment made');</script>";
@@ -49,8 +49,8 @@ echo "<script>console.log('statment made');</script>";
   <hr/>
 
   <?php
-  if ($rows[0]['password'] == $_POST['password']) {
-    echo "<h1>Logged in as".$_POST['username']."</h1>";
+  if ($rows[0]['password'] == $_POST['loginPassword']) {
+    echo "<h1>Logged in as".$_POST['loginUsername']."</h1>";
   }
   else {
     echo "<h1>Login Error</h1>"
