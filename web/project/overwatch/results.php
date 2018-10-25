@@ -48,6 +48,7 @@ print_r($suggestList);
 
 foreach ($enemyStrengths as $x) {
   if (($key = array_search($x, $suggestList)) !== false) {
+    print("key:" . $key);
     unset($suggestList[$key]);
   }  
 }
