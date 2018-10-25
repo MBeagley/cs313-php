@@ -22,35 +22,41 @@ catch (PDOException $ex)
   die();
 }
 
+//create arrays
 $suggestList = array();
-$teamStrengths = array();
+$enemyStrengths = array();
 
+//loop through enemy array
 for ($x = 1; $x <= 6; $x++) {
   $id = "enemy" . $x;
   $stmt = $db->prepare('SELECT * FROM characters WHERE id=:id');
   $stmt->execute(array(':id' => $_POST[$id]));
   $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+  //add to lists
   $suggestList[] = $rows[0]['weak_against'];
+  $enemyStrengths[] = $rows[0]['strong_against'];
 }
 
+//remove duplicates
 $suggestList = array_unique($suggestList);
+$suggestList = array_unique($enemyStrengths);
 
-// for ($x = 1; $x <= 5; $x++) {
-//   $id = "ally" . $x;
-//   $stmt = $db->prepare('SELECT * FROM characters WHERE id=:id');
-//   $stmt->execute(array(':id' => $_POST[$id]));
-//   $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+//remove if enemy team is strong_against
+$arrlength = count($enemyStrengths);
+for($x = 0; $x < $arrlength; $x++) {
+  if (($key = array_search($enemyStrengths[$x], $suggestList)) !== false) {
+    unset($suggestList[$key]);
+  }
+}
 
-//   $teamStrengths[] = $rows[0]['strong_against'];
-// }
-
-// $arrlength = count($teamStrengths);
-// for($x = 0; $x < $arrlength; $x++) {
-//   if (($key = array_search($teamStrengths[$x], $suggestList)) !== false) {
-//     unset($suggestList[$key]);
-//   }
-// }
+//remove if ally is playing
+for ($x = 1; $x <= 5; $x++) {
+  $id = "ally" . $x;
+  if (($key = array_search($_POST[$id], $suggestList)) !== false) {
+    unset($suggestList[$key]);
+  }
+}
 ?>
 <!DOCTYPE html>
 <html>
