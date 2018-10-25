@@ -77,6 +77,7 @@ $suggestList = array_unique($suggestList);
       echo "<div class='card'>";
       echo "<img class='icon' id='suggestIcon".$x."' src='images/".$x.".png'>";
       echo "</div>";      
+      echo "</div>";      
     }
     ?>
   </div>
