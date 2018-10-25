@@ -1,5 +1,7 @@
 <?php
 session_start();
+echo "<script>console.log('start');</script>";
+
 
 try
 {
@@ -29,9 +31,6 @@ $stmt->execute(array(':username' => $_POST['username']));
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 echo "<script>console.log('statment made');</script>";
-
-
-
 ?>
 <!DOCTYPE html>
 <html>
