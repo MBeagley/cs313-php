@@ -39,18 +39,9 @@ for ($x = 1; $x <= 6; $x++) {
   $enemyStrengths[] = $rows[0]['strong_against'];
 }
 
-print_r($suggestList);
-
 //remove duplicates
 $suggestList = array_unique($suggestList);
 $enemyStrengths = array_unique($enemyStrengths);
-
-print_r($suggestList);
-
-//remove if enemy team is strong_against
-// $suggestList = array_diff($suggestList, $enemyStrengths);
-
-// print_r($suggestList);
 
 //fill ally team array
 for ($x = 1; $x <= 5; $x++) {
@@ -58,11 +49,8 @@ for ($x = 1; $x <= 5; $x++) {
   $allyTeam[] = $_POST[$id];
 }
 
-//remove if ally is playing
+//remove if enemy team is strong_against or ally is playing
 $suggestList = array_diff($suggestList, $enemyStrengths, $allyTeam);
-
-print_r($suggestList);
-
 ?>
 <!DOCTYPE html>
 <html>
