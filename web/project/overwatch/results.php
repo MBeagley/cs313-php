@@ -55,7 +55,7 @@ print_r($suggestList);
 //fill ally team array
 for ($x = 1; $x <= 5; $x++) {
   $id = "ally" . $x;
-  $suggestList[] = $_POST[$id];
+  $allyTeam[] = $_POST[$id];
 }
 
 //remove if ally is playing
