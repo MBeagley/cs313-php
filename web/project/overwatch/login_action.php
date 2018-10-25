@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-echo '<script>console.log("start")</script>';
+//echo '<script>console.log("start")</script>';
 
 try
 {
@@ -25,10 +25,10 @@ catch (PDOException $ex)
   die();
 }
 
-echo '<script>console.log("db connect")</script>';
+//echo '<script>console.log("db connect")</script>';
 
 $statement = $db->query("SELECT * FROM 'players' WHERE 'username' = '" .mysql_escape_string($_POST['username']). "';");
-echo '<script>console.log("made statement")</script>';
+//echo '<script>console.log("made statement")</script>';
 while ($row = $statement->fetch(PDO::FETCH_ASSOC))
 {
   echo '<script>console.log("in while loop")</script>';
@@ -37,9 +37,9 @@ while ($row = $statement->fetch(PDO::FETCH_ASSOC))
   } else {
     echo "<h2>Login error</h2>";
   }
-  echo '<script>console.log("end while loop")</script>';
+  //echo '<script>console.log("end while loop")</script>';
 }
 
-echo '<script>console.log("end")</script>';
+//echo '<script>console.log("end")</script>';
 
 ?>

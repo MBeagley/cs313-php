@@ -15,13 +15,14 @@ session_start();
       <p>Matt Beagley's project for CS313</p>
     </div>
   </div>
+  <hr/>
 
   <div class="row">
     <div class='loginColumn'>
       <div class='card'>
         <div id="login">
           <h3>Login</h3>
-          <form action="/action_page.php">
+          <form action="login_action.php">
             Username:<br>
             <input type="text" name="username">
             <br>
@@ -38,7 +39,7 @@ session_start();
       <div class='card'>
         <div id="register">
           <h3>Register</h3>
-          <form action="/action_page.php">
+          <form action="login_action.php">
             Username:<br>
             <input type="text" name="username">
             <br>
