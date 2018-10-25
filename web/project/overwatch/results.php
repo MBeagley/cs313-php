@@ -43,7 +43,7 @@ print_r($suggestList);
 
 //remove duplicates
 $suggestList = array_unique($suggestList);
-$suggestList = array_unique($enemyStrengths);
+$enemyStrengths = array_unique($enemyStrengths);
 
 print_r($suggestList);
 
