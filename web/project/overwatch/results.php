@@ -48,9 +48,9 @@ $enemyStrengths = array_unique($enemyStrengths);
 print_r($suggestList);
 
 //remove if enemy team is strong_against
-$suggestList = array_diff($suggestList, $enemyStrengths);
+// $suggestList = array_diff($suggestList, $enemyStrengths);
 
-print_r($suggestList);
+// print_r($suggestList);
 
 //fill ally team array
 for ($x = 1; $x <= 5; $x++) {
@@ -59,7 +59,7 @@ for ($x = 1; $x <= 5; $x++) {
 }
 
 //remove if ally is playing
-$suggestList = array_diff($suggestList, $allyTeam);
+$suggestList = array_diff($suggestList, $enemyStrengths, $allyTeam);
 
 print_r($suggestList);
 
