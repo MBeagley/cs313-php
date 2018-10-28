@@ -150,6 +150,19 @@ body, html {
   color: rgba(0,0,0,.6);
 }
 
+.button {
+  background-color: #405275;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
 .buttonHolder {
  text-align: center;
 }

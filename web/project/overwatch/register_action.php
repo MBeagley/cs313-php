@@ -50,9 +50,12 @@ catch (PDOException $ex)
  catch (PDOException $ex)
  {
   echo '<h3>Error! That username already exists. Please try a differnt one</h3>';
+  echo '<a href="login.php" class="button">Return to Login/Register page</a>';
   die();
 }
-echo "<h3>Player ".$_POST['loginUsername']." successfully created!</h3>";
+echo "<h3>Player ".$_POST['registerUsername']." successfully created!</h3>";
+echo '<a href="login.php" class="button">Return to Login/Register page</a>';
+echo '<a href="characterSelect.php" class="button">Proceed to Character Select page</a>';
 ?>
 
 
