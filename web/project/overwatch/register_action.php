@@ -24,7 +24,6 @@ catch (PDOException $ex)
 
 $stmt = $db->prepare('INSERT INTO players (username, password) VALUES (:username, :password)');
 $stmt->execute(array(':username' => $_POST['registerUsername'], ':password' => $_POST['registerPassword']));
-$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
 <html>
