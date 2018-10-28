@@ -30,7 +30,7 @@ $stmt->execute(array(':username' => $_POST['registerUsername'], ':password' => $
 <head>
   <link rel="stylesheet" type="text/css" href="style.css">
   <script src="script.js"></script>
-  <title>Overwatch Character Picker</title>
+  <title>Overwatch Character Selector</title>
 </head>
 <body>
   <div class="header-image">
