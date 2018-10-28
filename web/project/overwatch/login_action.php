@@ -21,13 +21,10 @@ catch (PDOException $ex)
   echo 'Error!: ' . $ex->getMessage();
   die();
 }
-echo "<script>console.log('db connect');</script>";
 
 $stmt = $db->prepare('SELECT * FROM players WHERE username=:username');
 $stmt->execute(array(':username' => $_POST['loginUsername']));
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-echo "<script>console.log('statment made');</script>";
 ?>
 <!DOCTYPE html>
 <html>
