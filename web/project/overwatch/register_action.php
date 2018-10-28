@@ -52,6 +52,7 @@ catch (PDOException $ex)
   echo '<h3>Error! That username already exists. Please try a differnt one</h3>';
   die();
 }
+echo "<h3>Player ".$_POST['loginUsername']." successfully created!</h3>";
 ?>
 
 
