@@ -23,7 +23,7 @@ catch (PDOException $ex)
 }
 
 $stmt = $db->prepare('INSERT INTO players (username, password) VALUES (:username, :password)');
-$stmt->execute(array(':username' => $_POST['registerUsername'], ':password' => $_POST['registerPassword']));
+$success = $stmt->execute(array(':username' => $_POST['registerUsername'], ':password' => $_POST['registerPassword']));
 ?>
 <!DOCTYPE html>
 <html>
@@ -40,6 +40,15 @@ $stmt->execute(array(':username' => $_POST['registerUsername'], ':password' => $
     </div>
   </div>
   <hr/>
+
+  <?php
+  if ($success) {
+    echo "Success!";
+  } 
+  else {
+    echo "Failure!"
+  }
+  ?>
   
 
 </body>
