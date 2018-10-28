@@ -15,16 +15,16 @@ try
   $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
   $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+  $stmt = $db->prepare('SELECT * FROM players WHERE username=:username');
+  $stmt->execute(array(':username' => $_POST['loginUsername']));
+  $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 catch (PDOException $ex)
 {
   echo 'Error!: ' . $ex->getMessage();
   die();
 }
-
-$stmt = $db->prepare('SELECT * FROM players WHERE username=:username');
-$stmt->execute(array(':username' => $_POST['loginUsername']));
-$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 <!DOCTYPE html>
