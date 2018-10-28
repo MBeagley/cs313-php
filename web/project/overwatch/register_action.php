@@ -21,8 +21,7 @@ catch (PDOException $ex)
   echo 'Error!: ' . $ex->getMessage();
   die();
 }
-INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)
-VALUES ('Cardinal', 'Tom B. Erichsen', 'Skagen 21', 'Stavanger', '4006', 'Norway');
+
 $stmt = $db->prepare('INSERT INTO players (username, password) VALUES (:username, :password)');
 $stmt->execute(array(':username' => $_POST['registerUsername'], ':password' => $_POST['registerPassword']));
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
