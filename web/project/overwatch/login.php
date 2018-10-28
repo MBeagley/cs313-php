@@ -22,7 +22,7 @@ session_start();
       <div class='card'>
         <div id="login">
           <h3>Login</h3>
-          <form method="post" action="login_action.php">
+          <form action="login_action.php" method="post" >
             Username:<br>
             <input type="text" name="loginUsername">
             <br>
@@ -39,7 +39,7 @@ session_start();
       <div class='card'>
         <div id="register">
           <h3>Register</h3>
-          <form method="post" action="login_action.php">
+          <form action="register_action.php" method="post" >
             Username:<br>
             <input type="text" name="registerUsername">
             <br>
