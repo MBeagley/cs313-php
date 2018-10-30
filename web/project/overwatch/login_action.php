@@ -64,7 +64,7 @@ catch (PDOException $ex)
   if ($rows[0]['password'] == $password) {
     echo "<h1>Logged in as".$username."</h1>";
   } else {
-    echo "<h1>Login Error</h1>"
+    echo "<h1>Login Error</h1>";
   }
   ?>
 
