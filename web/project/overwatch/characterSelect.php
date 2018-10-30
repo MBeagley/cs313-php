@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-
 try
 {
   $dbUrl = getenv('DATABASE_URL');
@@ -40,6 +39,14 @@ catch (PDOException $ex)
       <p>Matt Beagley's project for CS313</p>
     </div>
   </div>
+
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li style="float:right"><a href="#about">About</a></li>
+  </ul>
+
   <hr/>
   <h2 align="center">Enemy Team</h2>
   <hr/>
