@@ -74,6 +74,7 @@ catch (PDOException $ex)
     if ($rows[0]['password'] == $_POST['loginPassword']) {
       echo "<h1>Logged in as ".$username."!</h1>";
       $_SESSION['player'] = $username;
+      $_SESSION['playerId'] = $rows[0]['id'];
       echo '<a href="login.php" class="button">Return to Login/Register page</a>';
       echo '<a href="characterSelect.php" class="button">Proceed to Character Select page</a>';
     } else {

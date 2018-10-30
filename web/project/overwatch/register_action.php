@@ -53,7 +53,7 @@ catch (PDOException $ex)
     ?>
   </ul>
   <hr/>
-  
+
 
   <?php
 
@@ -70,6 +70,10 @@ catch (PDOException $ex)
 }
 echo "<h3>Player ".$_POST['registerUsername']." successfully created!</h3>";
 $_SESSION['player'] = $_POST['registerUsername'];
+$newId = $pdo->lastInsertId('players_id_seq');
+print_r($newId);
+$_SESSION['playerId'] = $newId;
+
 echo '<a href="login.php" class="button">Return to Login/Register page</a>';
 echo '<a href="characterSelect.php" class="button">Proceed to Character Select page</a>';
 ?>
