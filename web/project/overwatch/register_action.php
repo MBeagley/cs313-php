@@ -40,7 +40,20 @@ catch (PDOException $ex)
       <p>Matt Beagley's project for CS313</p>
     </div>
   </div>
+
+  <ul>
+    <?php
+    if (empty($_SESSION['player'])) {
+      echo "<li><a class='active' href='login.php'>Login</a></li>";
+      echo "<li><a>Not Logged In</a></li>";    
+    } else {
+      echo "<li><a class='active' href='login.php'>Logout</a></li>";
+      echo "<li><a>Player: ".$_SESSION['player']."</a></li>";    
+    }
+    ?>
+  </ul>
   <hr/>
+  
 
   <?php
 
