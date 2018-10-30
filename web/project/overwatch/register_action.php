@@ -49,7 +49,7 @@ catch (PDOException $ex)
  }
  catch (PDOException $ex)
  {
-  echo '<h3>Error! That username already exists. Please try a differnt one</h3>';
+  echo '<h3>Error! That username already exists. Please try a differnt one.</h3>';
   echo '<a href="login.php" class="button">Return to Login/Register page</a>';
   die();
 }
