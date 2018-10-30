@@ -61,7 +61,7 @@ catch (PDOException $ex)
   {
    $stmt = $db->prepare('INSERT INTO players (username, password) VALUES (:username, :password)');
    $stmt->execute(array(':username' => $_POST['registerUsername'], ':password' => $_POST['registerPassword']));
-   $newId = $pdo->lastInsertId('players_id_seq');
+   $newId = $db->lastInsertId();
 
  }
  catch (PDOException $ex)
