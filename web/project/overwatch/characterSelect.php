@@ -40,10 +40,6 @@ catch (PDOException $ex)
       <p>Matt Beagley's project for CS313</p>
     </div>
   </div>
-  <ul>
-    <li style="float:right"><a href="#about">About</a></li>
-    <li style="float:right"><a href="login.php">Logout</a></li>
-  </ul>
   <hr/>
   <h2 align="center">Enemy Team</h2>
   <hr/>
