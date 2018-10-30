@@ -40,6 +40,7 @@ catch (PDOException $ex)
       <p>Matt Beagley's project for CS313</p>
     </div>
   </div>
+  <hr/>
   <div class="topnav">
     <a class="active" href="#home">Home</a>
     <a href="#news">News</a>
