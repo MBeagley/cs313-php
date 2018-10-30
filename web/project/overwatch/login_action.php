@@ -58,13 +58,13 @@ catch (PDOException $ex)
 
   print_r($rows);
 
-
-  // if ($rows[0]['password'] == $_POST['loginPassword']) {
-  //   echo "<h1>Logged in as".$_POST['loginUsername']."</h1>";
-  // }
-  // else {
-  //   echo "<h1>Login Error</h1>"
-  // }
+  $password = $_POST['loginUsername'];
+  if ($rows[0]['password'] == $password) {
+    echo "<h1>Logged in as".$username."</h1>";
+  }
+  else {
+    echo "<h1>Login Error</h1>"
+  }
   ?>
 
 
