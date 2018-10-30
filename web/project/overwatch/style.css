@@ -184,11 +184,11 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #f99e1a;
+  background-color: #333;
 }
 
 li {
-  float: left;
+  float: right;
 }
 
 li a {
@@ -197,4 +197,8 @@ li a {
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
+}
+
+.active {
+    background-color: #f99e1a;
 }

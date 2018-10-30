@@ -73,11 +73,11 @@ $suggestList = array_diff($suggestList, $enemyStrengths, $allyTeam);
   <ul>
     <?php
     if (empty($_SESSION['player'])) {
-      echo "<li style='float:right'><a href='login.php'>Login</a></li>";
-      echo "<li style='float:right'><a>Not Logged In</a></li>";    
+      echo "<li><a class='active' href='login.php'>Login</a></li>";
+      echo "<li><a>Not Logged In</a></li>";    
     } else {
-      echo "<li style='float:right'><a href='login.php'>Logout</a></li>";
-      echo "<li style='float:right'><a>Player: ".$_SESSION['player']."</a></li>";    
+      echo "<li><a class='active' href='login.php'>Logout</a></li>";
+      echo "<li><a>Player: ".$_SESSION['player']."</a></li>";    
     }
     ?>
   </ul>
