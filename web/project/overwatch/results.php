@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 
 try
 {
@@ -67,6 +69,10 @@ $suggestList = array_diff($suggestList, $enemyStrengths, $allyTeam);
       <p>Matt Beagley's project for CS313</p>
     </div>
   </div>
+  <hr/>
+  <?php
+  echo "<h4>Player: ".$_SESSION['player']."</h4>";
+  ?>
   <hr/>
   <h2 align="center">Suggested Characters</h2>
   <hr/>

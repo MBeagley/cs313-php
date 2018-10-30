@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 
 try
 {
@@ -54,6 +56,7 @@ catch (PDOException $ex)
   die();
 }
 echo "<h3>Player ".$_POST['registerUsername']." successfully created!</h3>";
+$_SESSION['player'] = $_POST['registerUsername'];
 echo '<a href="login.php" class="button">Return to Login/Register page</a>';
 echo '<a href="characterSelect.php" class="button">Proceed to Character Select page</a>';
 ?>

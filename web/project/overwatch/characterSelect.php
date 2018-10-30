@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 
 try
 {
@@ -38,7 +40,10 @@ catch (PDOException $ex)
       <p>Matt Beagley's project for CS313</p>
     </div>
   </div>
-
+  <hr/>
+  <?php
+  echo "<h4>Player: ".$_SESSION['player']."</h4>";
+  ?>
   <hr/>
   <h2 align="center">Enemy Team</h2>
   <hr/>
