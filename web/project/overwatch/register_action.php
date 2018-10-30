@@ -61,6 +61,8 @@ catch (PDOException $ex)
   {
    $stmt = $db->prepare('INSERT INTO players (username, password) VALUES (:username, :password)');
    $stmt->execute(array(':username' => $_POST['registerUsername'], ':password' => $_POST['registerPassword']));
+   $newId = $pdo->lastInsertId('players_id_seq');
+
  }
  catch (PDOException $ex)
  {
@@ -70,9 +72,7 @@ catch (PDOException $ex)
 }
 echo "<h3>Player ".$_POST['registerUsername']." successfully created!</h3>";
 $_SESSION['player'] = $_POST['registerUsername'];
-$newId = $pdo->lastInsertId('players_id_seq');
 $_SESSION['playerId'] = $newId;
-
 echo "<h3>New Id: ".$newId."</h3>";
 
 echo '<a href="login.php" class="button">Return to Login/Register page</a>';
