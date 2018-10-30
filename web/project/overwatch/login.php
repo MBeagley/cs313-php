@@ -29,8 +29,8 @@ session_start();
             Password:<br>
             <input type="text" name="loginPassword">
             <br><br>
-            <h3>Login coming soon</h3>
-            <!-- <input type="submit" value="Submit"> -->
+            <!-- <h3>Login coming soon</h3> -->
+            <input type="submit" value="Submit">
           </form>
         </div>
       </div>
