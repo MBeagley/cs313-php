@@ -69,12 +69,6 @@ $suggestList = array_diff($suggestList, $enemyStrengths, $allyTeam);
       <p>Matt Beagley's project for CS313</p>
     </div>
   </div>
-  <div class="topnav">
-    <a class="active" href="#home">Home</a>
-    <a href="#news">News</a>
-    <a href="#contact">Contact</a>
-    <a href="#about">About</a>
-  </div>
   <hr/>
   <h2 align="center">Suggested Characters</h2>
   <hr/>
