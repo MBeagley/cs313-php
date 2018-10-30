@@ -56,16 +56,20 @@ catch (PDOException $ex)
     die();
   }
 
-  print_r($rows);
-  print($_POST['loginUsername']);
-  print($_POST['loginPassword']);
-
-  $password = $_POST['loginPassword'];
-  if ($rows[0]['password'] == $password) {
-    echo "<h1>Logged in as".$username."</h1>";
+  if (!empty($rows)){
+    if ($rows[0]['password'] == $_POST['loginPassword']) {
+      echo "<h1>Logged in as ".$username."</h1>";      
+      echo '<a href="login.php" class="button">Return to Login/Register page</a>';
+      echo '<a href="characterSelect.php" class="button">Proceed to Character Select page</a>';
+    } else {
+      echo "<h3>Incorrect password. Please try again.</h3>";
+      echo '<a href="login.php" class="button">Return to Login/Register page</a>';
+    }
   } else {
-    echo "<h1>Login Error</h1>";
+    echo "<h3>No player with that username exists. Please try again or register!</h3>";    
+    echo '<a href="login.php" class="button">Return to Login/Register page</a>';
   }
+  
   ?>
 
 
