@@ -26,6 +26,7 @@ catch (PDOException $ex)
 
 //create arrays
 $suggestList = array();
+$suggestNames = array();
 $enemyStrengths = array();
 $allyTeam = array();
 
@@ -39,6 +40,9 @@ for ($x = 1; $x <= 6; $x++) {
   //add to lists
   $suggestList[] = $rows[0]['weak_against'];
   $enemyStrengths[] = $rows[0]['strong_against'];
+
+  $nameId = $rows[0]['id'];
+  $suggestNames[$nameId] = $rows[0]['name'];
 }
 
 //remove duplicates
@@ -90,6 +94,7 @@ $suggestList = array_diff($suggestList, $enemyStrengths, $allyTeam);
     foreach ($suggestList as $x) {
       echo "<div class='enemyColumn'>";
       echo "<div class='card'>";
+      echo "<h3>".$suggestNames[$x]."</h3>";
       echo "<img class='icon' id='suggestIcon".$x."' src='images/".$x.".png'>";
       echo "</div>";      
       echo "</div>";      
