@@ -94,7 +94,7 @@ $suggestList = array_diff($suggestList, $enemyStrengths, $allyTeam);
       echo "<div class='flip-card'>";
       echo "<div class='flip-card-inner'>";
       echo "<div class='flip-card-front'>";
-      echo "<img class='icon' id='suggestIcon".$x."' src='images/".$x.".png' style='width:300px;height:300px;'>";
+      echo "<img class='icon' id='suggestIcon".$x."' src='images/".$x.".png'>";
       //echo "<img src='img_avatar.png' alt='Avatar' style='width:300px;height:300px;'>";
       echo "</div>";
       echo "<div class='flip-card-back'>";
