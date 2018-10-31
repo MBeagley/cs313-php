@@ -41,7 +41,7 @@ for ($x = 1; $x <= 6; $x++) {
   $suggestList[] = $rows[0]['weak_against'];
   $enemyStrengths[] = $rows[0]['strong_against'];
 
-  $nameId = $rows[0]['strong_against'];
+  $nameId = $_POST[$id];
   $suggestNames[$nameId] = $rows[0]['name'];
 }
 
