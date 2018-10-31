@@ -41,7 +41,12 @@ for ($x = 1; $x <= 6; $x++) {
   $suggestList[] = $rows[0]['weak_against'];
   $enemyStrengths[] = $rows[0]['strong_against'];
 
-  $nameId = $_POST[$id];
+  $nameId = $rows[0]['weak_against'];
+
+  $stmt = $db->prepare('SELECT name FROM characters WHERE id=:id');
+  $stmt->execute(array(':id' => $rows[0]['weak_against']));
+  $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  
   $suggestNames[$nameId] = $rows[0]['name'];
 }
 
