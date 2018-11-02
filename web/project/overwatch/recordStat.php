@@ -88,12 +88,13 @@ catch (PDOException $ex)
             $stmt->execute(array(':loses' => $newLoses, ':player' => $_SESSION['playerId'], ':character' => $_POST['character']));
           }
         } else {
-          $stmt = $db->prepare('INSERT INTO statistics (player, character, wins, loses) VALUES (:username, :password, :wins, :loses)');
           if($_POST["win"]) {
             echo "<h4>New Win Rate: 100%</h4>";
+            $stmt = $db->prepare('INSERT INTO statistics (player, character, wins, loses) VALUES (:username, :password, :wins, :loses)');
             $stmt->execute(array(':player' => $_SESSION['playerId'], ':character' => $_POST['character'], ':wins' => 1, ':loses' => 0));
           } else {
             echo "<h4>New Win Rate: 0%</h4>";
+            $stmt = $db->prepare('INSERT INTO statistics (player, character, wins, loses) VALUES (:username, :password, :wins, :loses)');
             $stmt->execute(array(':player' => $_SESSION['playerId'], ':character' => $_POST['character'], ':wins' => 0, ':loses' => 1));
           }
         }
