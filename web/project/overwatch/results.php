@@ -94,7 +94,7 @@ $suggestList = array_diff($suggestList, $enemyStrengths, $allyTeam);
   <hr/>
   <h2 align="center">Suggested Characters</h2>
   <hr/>
-  <form action="results.php" method="post" id="myForm">
+  <form action="recordStat.php" method="post" id="myForm">
     <div class='row'>
       <?php
       foreach ($suggestList as $x) {
@@ -102,7 +102,7 @@ $suggestList = array_diff($suggestList, $enemyStrengths, $allyTeam);
         echo "<div class='card'>";
         echo "<h3>".$suggestNames[$x]."</h3>";
         echo "<img class='icon' id='suggestIcon".$x."' src='images/".$x.".png'>";
-        echo "<h3>Select</h3>";
+        echo "<h4>Select</h4>";
         echo "<input type='radio' name='character' value='".$x."'>";
         echo "</div>";      
         echo "</div>";      
@@ -110,8 +110,9 @@ $suggestList = array_diff($suggestList, $enemyStrengths, $allyTeam);
       ?>
     </div>
     <hr/>
-    <div class="buttonHolder">
-      <input type="submit" value="Submit">
+    <div class="buttonHolder">      
+      <input type="submit" value="Won" name="win" />
+      <input type="submit" value="Lost" name="lose"/>
     </div>
     <hr/>
   </form>
