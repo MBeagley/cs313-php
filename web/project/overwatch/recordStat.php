@@ -53,38 +53,54 @@ catch (PDOException $ex)
     ?>
   </ul>
   <hr/>
+  <div class='buttonHolder'>
+    <div class='enemyColumn'>
+      <div class='card'>        
+        <?php
+        //echo "<h3>".$suggestNames[$x]."</h3>";
+        echo "<img class='icon' id='suggestIcon".$_POST['character']."' src='images/".$_POST['character'].".png'>";
+        try
+        {
+          $stmt = $db->prepare('SELECT * FROM statistics WHERE player=:player AND character=:character');
+          $stmt->execute(array(':player' => $_SESSION['playerId'], ':character' => $_POST['character']));
+          $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+        catch (PDOException $ex)
+        {
+        }
 
-
-  <?php
-  try
-  {
-    $stmt = $db->prepare('SELECT * FROM statistics WHERE player=:player AND character=:character');
-    $stmt->execute(array(':player' => $_SESSION['playerId'], ':character' => $_POST['character']));
-    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-  }
-  catch (PDOException $ex)
-  {
-  }
-
-  if (!empty($rows)) {
-    if($_POST["win"]) {
-      $newWins = $rows[0]['wins'] + 1;
-      $stmt = $db->prepare('UPDATE statistics SET wins=:wins WHERE player=:player AND character=:character');
-      $stmt->execute(array(':wins' => $newWins, ':player' => $_SESSION['playerId'], ':character' => $_POST['character']));
-    } else {
-      $newLoses = $rows[0]['loses'] + 1;
-      $stmt = $db->prepare('UPDATE statistics SET loses=:loses WHERE player=:player AND character=:character');
-      $stmt->execute(array(':loses' => $newLoses, ':player' => $_SESSION['playerId'], ':character' => $_POST['character']));
-    }
-  } else {
-    $stmt = $db->prepare('INSERT INTO statistics (player, character, wins, loses) VALUES (:username, :password, :wins, :loses)');
-    if($_POST["win"]) {
-      $stmt->execute(array(':player' => $_SESSION['playerId'], ':character' => $_POST['character'], ':wins' => 1, ':loses' => 0));
-    } else {
-      $stmt->execute(array(':player' => $_SESSION['playerId'], ':character' => $_POST['character'], ':wins' => 0, ':loses' => 1));
-    }
-  }
-  ?>
+        if (!empty($rows)) {
+          if($_POST["win"]) {
+            $newWins = $rows[0]['wins'] + 1;
+            $total = $newWins + $rows[0]['loses'];
+            $winRate = $newWins / $total;
+            $percent = round((float)$winRate * 100 ) . '%';
+            echo "<h4>New Win Rate: ".$percent."</h4>";
+            $stmt = $db->prepare('UPDATE statistics SET wins=:wins WHERE player=:player AND character=:character');
+            $stmt->execute(array(':wins' => $newWins, ':player' => $_SESSION['playerId'], ':character' => $_POST['character']));
+          } else {
+            $newLoses = $rows[0]['loses'] + 1;
+            $total = $rows[0]['wins'] + $newLoses;
+            $winRate = $rows[0]['wins'] / $total;
+            $percent = round((float)$winRate * 100 ) . '%';
+            echo "<h4>New Win Rate: ".$percent."</h4>";
+            $stmt = $db->prepare('UPDATE statistics SET loses=:loses WHERE player=:player AND character=:character');
+            $stmt->execute(array(':loses' => $newLoses, ':player' => $_SESSION['playerId'], ':character' => $_POST['character']));
+          }
+        } else {
+          $stmt = $db->prepare('INSERT INTO statistics (player, character, wins, loses) VALUES (:username, :password, :wins, :loses)');
+          if($_POST["win"]) {
+            echo "<h4>New Win Rate: 100%</h4>";
+            $stmt->execute(array(':player' => $_SESSION['playerId'], ':character' => $_POST['character'], ':wins' => 1, ':loses' => 0));
+          } else {
+            echo "<h4>New Win Rate: 0%</h4>";
+            $stmt->execute(array(':player' => $_SESSION['playerId'], ':character' => $_POST['character'], ':wins' => 0, ':loses' => 1));
+          }
+        }
+        ?>
+      </div>
+    </div>
+  </div>
 
 
 </body>
