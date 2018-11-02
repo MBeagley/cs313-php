@@ -98,14 +98,25 @@ $suggestList = array_diff($suggestList, $enemyStrengths, $allyTeam);
     <div class='row'>
       <?php
       foreach ($suggestList as $x) {
-        $stmt = $db->prepare('SELECT * FROM statistics WHERE player=:username AND character=:character');
-        $stmt->execute(array(':player' => $_SESSION['id'], ':character' => $x));
-        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 
         echo "<div class='enemyColumn'>";
         echo "<div class='card'>";
         echo "<h3>".$suggestNames[$x]."</h3>";
         echo "<img class='icon' id='suggestIcon".$x."' src='images/".$x.".png'>";
+
+        try
+        {
+          $stmt = $db->prepare('SELECT * FROM statistics WHERE player=:username AND character=:character');
+          $stmt->execute(array(':player' => $_SESSION['id'], ':character' => $x));
+          $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+        catch (PDOException $ex)
+        {
+          echo '<h3>Error! That username already exists. Please try a differnt one</h3>';
+          die();
+        }
+
         if (empty($rows)) {
           echo "<h4>Win Rate: n/a</h4>";
         } else {
