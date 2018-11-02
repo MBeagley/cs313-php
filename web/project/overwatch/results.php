@@ -102,8 +102,6 @@ $suggestList = array_diff($suggestList, $enemyStrengths, $allyTeam);
         $stmt->execute(array(':player' => $_SESSION['id'], ':character' => $x));
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        $rows[0]['name']
-
         echo "<div class='enemyColumn'>";
         echo "<div class='card'>";
         echo "<h3>".$suggestNames[$x]."</h3>";
