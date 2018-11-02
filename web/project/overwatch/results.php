@@ -113,17 +113,15 @@ $suggestList = array_diff($suggestList, $enemyStrengths, $allyTeam);
         }
         catch (PDOException $ex)
         {
-          echo '<h3>Error! That username already exists. Please try a differnt one</h3>';
-          die();
+          echo '<h4>Win Rate: n/a</h4>';
         }
 
-        if (empty($rows)) {
-          echo "<h4>Win Rate: n/a</h4>";
-        } else {
+        if (!empty($rows)) {
           $total = $rows[0]['wins'] + $rows[0]['loses'];
           $winRate = $rows[0]['wins'] / $total;
           echo "<h4>Win Rate: ".$winRate."</h4>";
         }
+        
         echo "<h4>Select</h4>";
         echo "<input type='radio' onclick=\"displayHidden('submitDiv')\" name='character' value='".$x."'>";
         echo "</div>";      
