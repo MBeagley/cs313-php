@@ -108,16 +108,13 @@ $suggestList = array_diff($suggestList, $enemyStrengths, $allyTeam);
         try
         {
           $stmt = $db->prepare('SELECT * FROM statistics WHERE player=:player AND character=:character');
-          $stmt->execute(array(':player' => $_SESSION['id'], ':character' => $x));
+          $stmt->execute(array(':player' => $_SESSION['playerId'], ':character' => $x));
           $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
         catch (PDOException $ex)
         {
           echo '<h4>Win Rate: n/a</h4>';
         }
-        print_r($_SESSION['id']);
-        print_r($x);
-        print_r($rows);
 
         if (!empty($rows)) {
           $total = $rows[0]['wins'] + $rows[0]['loses'];
