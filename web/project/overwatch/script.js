@@ -15,13 +15,13 @@ function toggleHidden(idOn, idOff) {
 function toggleSelected(idOn, count) {
     var button = 'button' + idOn;
     var select = document.getElementById(button);
-    if (select.value == "Unselect") {
-        select.value = "Select";        
+    if (select.innerHTML == "Unselect") {
+        select.innerHTML = "Select";        
     } else {
         for (var i = 0; i < count; i++) {
             var offButton = 'button' + i;
             var unselect = document.getElementById(offButton);
-            unselect.value = "Select";
+            unselect.innerHTML = "Select";
 
             var submit = 'submit' + i;
             var off = document.getElementById(submit);
@@ -29,7 +29,7 @@ function toggleSelected(idOn, count) {
                 off.style.display = "none";
             }
         }
-        select.value = "Unselect";
+        select.innerHTML = "Unselect";
     }
 
 
