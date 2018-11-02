@@ -107,7 +107,7 @@ $suggestList = array_diff($suggestList, $enemyStrengths, $allyTeam);
         echo "<h3>".$suggestNames[$x]."</h3>";
         echo "<img class='icon' id='suggestIcon".$x."' src='images/".$x.".png'>";
         if (empty($rows)) {
-          echo "<h4>Win Rate: n/a</h4>"
+          echo "<h4>Win Rate: n/a</h4>";
         } else {
           $total = $rows[0]['wins'] + $rows[0]['loses'];
           $winRate = $rows[0]['wins'] / $total;
