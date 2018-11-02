@@ -98,10 +98,23 @@ $suggestList = array_diff($suggestList, $enemyStrengths, $allyTeam);
     <div class='row'>
       <?php
       foreach ($suggestList as $x) {
+        $stmt = $db->prepare('SELECT * FROM statistics WHERE player=:username AND character=:character');
+        $stmt->execute(array(':player' => $_SESSION['id'], ':character' => $x));
+        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        $rows[0]['name']
+
         echo "<div class='enemyColumn'>";
         echo "<div class='card'>";
         echo "<h3>".$suggestNames[$x]."</h3>";
         echo "<img class='icon' id='suggestIcon".$x."' src='images/".$x.".png'>";
+        if (empty($rows)) {
+          echo "<h4>Win Rate: n/a</h4>"
+        } else {
+          $total = $rows[0]['wins'] + $rows[0]['loses'];
+          $winRate = $rows[0]['wins'] / $total;
+          echo "<h4>Win Rate: ".$winRate."</h4>";
+        }
         echo "<h4>Select</h4>";
         echo "<input type='radio' onclick=\"displayHidden('submitDiv')\" name='character' value='".$x."'>";
         echo "</div>";      
