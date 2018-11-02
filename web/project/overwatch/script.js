@@ -13,17 +13,17 @@ function toggleHidden(idOn, idOff) {
 }
 
 function toggleSelected(idOn, count) {
-    var button = 'button' + idOn.toSting();
+    var button = 'button' + idOn;
     var select = document.getElementById(button);
     if (select.value == "Unselect") {
         select.value = "Select";        
     } else {
         for (var i = 0; i < count; i++) {
-            var offButton = 'button' + i.toSting();
+            var offButton = 'button' + i;
             var unselect = document.getElementById(offButton);
             unselect.value = "Select";
 
-            var submit = 'submit' + i.toSting();
+            var submit = 'submit' + i;
             var off = document.getElementById(submit);
             if (off.style.display === "block") {
                 off.style.display = "none";
