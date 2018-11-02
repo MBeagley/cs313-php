@@ -115,6 +115,9 @@ $suggestList = array_diff($suggestList, $enemyStrengths, $allyTeam);
         {
           echo '<h4>Win Rate: n/a</h4>';
         }
+        print_r($_SESSION['id']);
+        print_r($x);
+        print_r($rows);
 
         if (!empty($rows)) {
           $total = $rows[0]['wins'] + $rows[0]['loses'];
