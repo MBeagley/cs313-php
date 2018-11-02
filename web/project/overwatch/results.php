@@ -119,7 +119,8 @@ $suggestList = array_diff($suggestList, $enemyStrengths, $allyTeam);
         if (!empty($rows)) {
           $total = $rows[0]['wins'] + $rows[0]['loses'];
           $winRate = $rows[0]['wins'] / $total;
-          echo "<h4>Win Rate: ".$winRate."</h4>";
+          $percent = round((float)$winRate * 100 ) . '%';
+          echo "<h4>Win Rate: ".$percent."</h4>";
         } else {
           echo '<h4>Win Rate: n/a</h4>';
         }
