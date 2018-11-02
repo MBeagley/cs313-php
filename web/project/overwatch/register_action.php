@@ -66,13 +66,13 @@ catch (PDOException $ex)
  }
  catch (PDOException $ex)
  {
-  echo "<div class='buttonHolder>";
+  echo "<div class='buttonHolder'>";
   echo '<h3>Error! That username already exists. Please try a differnt one.</h3>';
   echo '<a href="login.php" class="button">Return to Login/Register page</a>';
   echo "</div>";
   die();
 }
-echo "<div class='buttonHolder>";
+echo "<div class='buttonHolder'>";
 echo "<h3>Player ".$_POST['registerUsername']." successfully created!</h3>";
 $_SESSION['player'] = $_POST['registerUsername'];
 $_SESSION['playerId'] = $newId;
