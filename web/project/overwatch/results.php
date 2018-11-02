@@ -101,11 +101,22 @@ $suggestList = array_diff($suggestList, $enemyStrengths, $allyTeam);
       echo "<div class='card'>";
       echo "<h3>".$suggestNames[$x]."</h3>";
       echo "<img class='icon' id='suggestIcon".$x."' src='images/".$x.".png'>";
+      echo "<button type='button' id='button".$x."' onclick='toggleSelected(suggestIcon".$x.", ".count($suggestList).")'>Select</button>";
       echo "</div>";      
       echo "</div>";      
     }
     ?>
   </div>
+  <hr/>
+  <?php
+  foreach ($suggestList as $x) {
+    echo "<div id='submit".$x."' style='display:none;'>";
+    echo "<button type='button' id='win".$x."' onclick='toggleSelected(".$x.", ".count($suggestList).")'>Won</button>";
+    echo "<button type='button' id='lose".$x."' onclick='toggleSelected(".$x.", ".count($suggestList).")'>Lost</button>";
+    echo "</div>";
+  }
+  ?>
+
 
 </body>
 </html>
