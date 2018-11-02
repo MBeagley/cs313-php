@@ -89,6 +89,8 @@ $suggestList = array_diff($suggestList, $enemyStrengths, $allyTeam);
       echo "<li><a>Player: ".$_SESSION['player']."</a></li>";    
     }
     ?>
+    <li><a class='active' href='characterSelect.php' style="float: right;">Character Select</a></li>
+    <li><a class='active' href='stats.php' style="float: right;">Statistics</a></li> 
   </ul>
 
   <hr/>
