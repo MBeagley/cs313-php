@@ -103,7 +103,7 @@ $suggestList = array_diff($suggestList, $enemyStrengths, $allyTeam);
         echo "<h3>".$suggestNames[$x]."</h3>";
         echo "<img class='icon' id='suggestIcon".$x."' src='images/".$x.".png'>";
         echo "<h4>Select</h4>";
-        echo "<input type='radio' onclick='displayHidden(submitDiv)' name='character' value='".$x."'>";
+        echo "<input type='radio' onclick=\"displayHidden('submitDiv')\" name='character' value='".$x."'>";
         echo "</div>";      
         echo "</div>";      
       }
