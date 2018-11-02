@@ -65,25 +65,33 @@ catch (PDOException $ex)
   }
   catch (PDOException $ex)
   {
+    echo "<div class='buttonHolder>";
     echo '<h3>Error! That username already exists. Please try a differnt one</h3>';
     echo '<a href="login.php" class="button">Return to Login/Register page</a>';
+    echo "</div>";
     die();
   }
 
   if (!empty($rows)){
     if ($rows[0]['password'] == $_POST['loginPassword']) {
+      echo "<div class='buttonHolder>";
       echo "<h1>Logged in as ".$username."!</h1>";
       $_SESSION['player'] = $username;
       $_SESSION['playerId'] = $rows[0]['id'];
       echo '<a href="login.php" class="button">Return to Login/Register page</a>';
       echo '<a href="characterSelect.php" class="button">Proceed to Character Select page</a>';
+      echo "</div>";
     } else {
+      echo "<div class='buttonHolder>";
       echo "<h3>Incorrect password. Please try again.</h3>";
       echo '<a href="login.php" class="button">Return to Login/Register page</a>';
+      echo "</div>";
     }
   } else {
+    echo "<div class='buttonHolder>";
     echo "<h3>No player with that username exists. Please try again or register!</h3>";    
     echo '<a href="login.php" class="button">Return to Login/Register page</a>';
+    echo "</div>";
   }
   
   ?>

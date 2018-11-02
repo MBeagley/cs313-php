@@ -56,7 +56,34 @@ catch (PDOException $ex)
 
 
   <?php
-  
+  try
+  {
+    $stmt = $db->prepare('SELECT * FROM statistics WHERE player=:player AND character=:character');
+    $stmt->execute(array(':player' => $_SESSION['playerId'], ':character' => $_POST['character']));
+    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  }
+  catch (PDOException $ex)
+  {
+  }
+
+  if (!empty($rows)) {
+    if($_POST["win"]) {
+      $newWins = $rows[0]['wins'] + 1;
+      $stmt = $db->prepare('UPDATE statistics SET wins=:wins WHERE player=:player AND character=:character');
+      $stmt->execute(array(':wins' => $newWins, ':player' => $_SESSION['playerId'], ':character' => $_POST['character']));
+    } else {
+      $newLoses = $rows[0]['loses'] + 1;
+      $stmt = $db->prepare('UPDATE statistics SET loses=:loses WHERE player=:player AND character=:character');
+      $stmt->execute(array(':loses' => $newLoses, ':player' => $_SESSION['playerId'], ':character' => $_POST['character']));
+    }
+  } else {
+    $stmt = $db->prepare('INSERT INTO statistics (player, character, wins, loses) VALUES (:username, :password, :wins, :loses)');
+    if($_POST["win"]) {
+      $stmt->execute(array(':player' => $_SESSION['playerId'], ':character' => $_POST['character'], ':wins' => 1, ':loses' => 0));
+    } else {
+      $stmt->execute(array(':player' => $_SESSION['playerId'], ':character' => $_POST['character'], ':wins' => 0, ':loses' => 1));
+    }
+  }
   ?>
 
 
