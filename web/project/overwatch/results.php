@@ -107,7 +107,7 @@ $suggestList = array_diff($suggestList, $enemyStrengths, $allyTeam);
 
         try
         {
-          $stmt = $db->prepare('SELECT * FROM statistics WHERE player=:username AND character=:character');
+          $stmt = $db->prepare('SELECT * FROM statistics WHERE player=:player AND character=:character');
           $stmt->execute(array(':player' => $_SESSION['id'], ':character' => $x));
           $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
@@ -121,7 +121,7 @@ $suggestList = array_diff($suggestList, $enemyStrengths, $allyTeam);
           $winRate = $rows[0]['wins'] / $total;
           echo "<h4>Win Rate: ".$winRate."</h4>";
         }
-        
+
         echo "<h4>Select</h4>";
         echo "<input type='radio' onclick=\"displayHidden('submitDiv')\" name='character' value='".$x."'>";
         echo "</div>";      
