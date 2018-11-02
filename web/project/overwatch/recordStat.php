@@ -54,7 +54,7 @@ catch (PDOException $ex)
   </ul>
   <hr/>
   <div class='buttonHolder'>
-    <div class='enemyColumn'>
+    <div class='resultsColumn'>
       <div class='card'>        
         <?php
         //echo "<h3>".$suggestNames[$x]."</h3>";

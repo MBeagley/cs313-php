@@ -33,6 +33,11 @@ body, html {
   padding: 0 10px;
 }
 
+.resultsColumn {
+  width: 16.6%;
+  padding: 0 10px;
+}
+
 /* Float five columns side by side */
 .allyColumn {
   float: left;
@@ -40,7 +45,7 @@ body, html {
   padding: 0 10px;
 }
 
-/* Float five columns side by side */
+/* Float two columns side by side */
 .loginColumn {
   float: left;
   width: 50%;
@@ -70,6 +75,11 @@ body, html {
     margin-bottom: 20px;
   }
   .loginColumn {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+  .resultsColumn {
     width: 100%;
     display: block;
     margin-bottom: 20px;
