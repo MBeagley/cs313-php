@@ -14,7 +14,6 @@ function toggleHidden(idOn, idOff) {
 
 function toggleSelected(idOn, count) {
     var button = 'button' + idOn;
-    alert(button);
     var select = document.getElementById(button);
     if (select.innerHTML == "Unselect") {
         select.innerHTML = "Select";        

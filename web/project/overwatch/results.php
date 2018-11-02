@@ -94,28 +94,27 @@ $suggestList = array_diff($suggestList, $enemyStrengths, $allyTeam);
   <hr/>
   <h2 align="center">Suggested Characters</h2>
   <hr/>
-  <div class='row'>
-    <?php
-    foreach ($suggestList as $x) {
-      echo "<div class='enemyColumn'>";
-      echo "<div class='card'>";
-      echo "<h3>".$suggestNames[$x]."</h3>";
-      echo "<img class='icon' id='suggestIcon".$x."' src='images/".$x.".png'>";
-      echo "<button type='button' id='button".$x."' onclick='toggleSelected(suggestIcon".$x.", ".count($suggestList).")'>Select</button>";
-      echo "</div>";      
-      echo "</div>";      
-    }
-    ?>
-  </div>
-  <hr/>
-  <?php
-  foreach ($suggestList as $x) {
-    echo "<div id='submit".$x."' style='display:none;'>";
-    echo "<button type='button' id='win".$x."' onclick='toggleSelected(".$x.", ".count($suggestList).")'>Won</button>";
-    echo "<button type='button' id='lose".$x."' onclick='toggleSelected(".$x.", ".count($suggestList).")'>Lost</button>";
-    echo "</div>";
-  }
-  ?>
+  <form action="results.php" method="post" id="myForm">
+    <div class='row'>
+      <?php
+      foreach ($suggestList as $x) {
+        echo "<div class='enemyColumn'>";
+        echo "<div class='card'>";
+        echo "<h3>".$suggestNames[$x]."</h3>";
+        echo "<img class='icon' id='suggestIcon".$x."' src='images/".$x.".png'>";
+        echo "<h3>Select</h3>";
+        echo "<input type='radio' name='character' value='".$x."'>";
+        echo "</div>";      
+        echo "</div>";      
+      }
+      ?>
+    </div>
+    <hr/>
+    <div class="buttonHolder">
+      <input type="submit" value="Submit">
+    </div>
+    <hr/>
+  </form>
 
 
 </body>
