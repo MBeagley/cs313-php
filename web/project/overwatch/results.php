@@ -120,6 +120,8 @@ $suggestList = array_diff($suggestList, $enemyStrengths, $allyTeam);
           $total = $rows[0]['wins'] + $rows[0]['loses'];
           $winRate = $rows[0]['wins'] / $total;
           echo "<h4>Win Rate: ".$winRate."</h4>";
+        } else {
+          echo '<h4>Win Rate: n/a</h4>';
         }
 
         echo "<h4>Select</h4>";
