@@ -41,19 +41,22 @@ catch (PDOException $ex)
     </div>
   </div>
 
-  <ul>
-    <?php
-    if (empty($_SESSION['player'])) {
-      echo "<li><a class='active' href='login.php'>Login</a></li>";
-      echo "<li><a>Not Logged In</a></li>";    
-    } else {
-      echo "<li><a class='active' href='login.php'>Logout</a></li>";
-      echo "<li><a>Player: ".$_SESSION['player']."</a></li>";    
-    }
-    ?>
-    <li><a class='active' href='characterSelect.php' style="float: right;">Character Select</a></li>
-    <li><a class='active' href='stats.php' style="float: right;">Statistics</a></li> 
-  </ul>
+  <div class="topnav">
+    <a class="active" href="characterSelect.php">Character Select</a>
+    <a href="stats.php">Statistics</a>
+    <div class="topnav-right">
+      <?php
+      if (empty($_SESSION['player'])) {
+        echo "<a>Not Logged In</a>";    
+        echo "<a class='active' href='login.php'>Login</a>";
+      } else {
+        echo "<a>Player: ".$_SESSION['player']."</a>";
+        echo "<a class='active' href='login.php'>Logout</a>";
+      }
+      ?>
+    </div>
+  </div>
+
   <hr/>
   <div class='buttonHolder'>
     <div class='resultsColumn'>
