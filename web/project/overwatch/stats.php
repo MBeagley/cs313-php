@@ -23,45 +23,6 @@ catch (PDOException $ex)
   echo 'Error!: ' . $ex->getMessage();
   die();
 }
-
-// //create arrays
-// $suggestList = array();
-// $suggestNames = array();
-// $enemyStrengths = array();
-// $allyTeam = array();
-
-// //loop through enemy array
-// for ($x = 1; $x <= 6; $x++) {
-//   $id = "enemy" . $x;
-//   $stmt = $db->prepare('SELECT * FROM characters WHERE id=:id');
-//   $stmt->execute(array(':id' => $_POST[$id]));
-//   $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-//   //add to lists
-//   $suggestList[] = $rows[0]['weak_against'];
-//   $enemyStrengths[] = $rows[0]['strong_against'];
-
-//   $nameId = $rows[0]['weak_against'];
-
-//   $stmt = $db->prepare('SELECT name FROM characters WHERE id=:id');
-//   $stmt->execute(array(':id' => $rows[0]['weak_against']));
-//   $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-//   $suggestNames[$nameId] = $rows[0]['name'];
-// }
-
-// //remove duplicates
-// $suggestList = array_unique($suggestList);
-// $enemyStrengths = array_unique($enemyStrengths);
-
-// //fill ally team array
-// for ($x = 1; $x <= 5; $x++) {
-//   $id = "ally" . $x;
-//   $allyTeam[] = $_POST[$id];
-// }
-
-// //remove if enemy team is strong_against or ally is playing
-// $suggestList = array_diff($suggestList, $enemyStrengths, $allyTeam);
 ?>
 <!DOCTYPE html>
 <html>
@@ -102,8 +63,6 @@ catch (PDOException $ex)
     <?php
     foreach ($db->query('SELECT * FROM characters') as $row)
     {
-      echo "<option value='".$row['id']."'>".$row['name']."</option>";
-
       echo "<div class='enemyColumn'>";
       echo "<div class='card'>";
       echo "<h3>".$row['name']."</h3>";
