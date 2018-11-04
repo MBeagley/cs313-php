@@ -61,6 +61,7 @@ catch (PDOException $ex)
   <hr/>
   <div class='row'>
     <?php
+    $counter = 1;
     foreach ($db->query('SELECT * FROM characters') as $row)
     {
       echo "<div class='enemyColumn'>";
@@ -88,7 +89,14 @@ catch (PDOException $ex)
         echo '<h4>Win Rate: n/a</h4>';
       }
       echo "</div>";      
-      echo "</div>";      
+      echo "</div>";
+
+      $counter++;
+      if ($counter % 6 == 0) {
+        echo "</div>";  
+        echo "<div class='row'>";
+      }
+
     }
     ?>
   </div>
