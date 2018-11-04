@@ -106,6 +106,11 @@ catch (PDOException $ex)
       </div>
     </div>
   </div>
+  <hr/>
+  <div class='buttonHolder'>
+    <a href="characterSelect.php" class="button">Select characters again</a>
+    <a href="stats.php" class="button">View statistics</a>
+  </div>
 
 
 </body>
