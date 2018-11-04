@@ -26,7 +26,6 @@ body, html {
   color: white;
 }
 
-/* Float six columns side by side */
 .enemyColumn {
   float: left;
   width: 16.6%;
@@ -38,31 +37,26 @@ body, html {
   padding: 0 10px;
 }
 
-/* Float five columns side by side */
 .allyColumn {
   float: left;
   width: 20%;
   padding: 0 10px;
 }
 
-/* Float two columns side by side */
 .loginColumn {
   float: left;
   width: 50%;
   padding: 0 10px;
 }
 
-/* Remove extra left and right margins, due to padding */
 .row {margin: 0 -5px;}
 
-/* Clear floats after the columns */
 .row:after {
   content: "";
   display: table;
   clear: both;
 }
 
-/* Responsive columns */
 @media screen and (max-width: 600px) {
   .enemyColumn {
     width: 100%;
@@ -86,7 +80,6 @@ body, html {
   }
 }
 
-/* Style the counter cards */
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 16px;
@@ -100,7 +93,6 @@ body, html {
   background-color: #f99e1a;
 }
 
-/* Custom dropdown */
 .custom-dropdown {
   position: relative;
   display: inline-block;
@@ -118,14 +110,10 @@ body, html {
   border-radius: 3px;
   text-indent: 0.01px;
   text-overflow: '';
-  /*Hiding the select arrow for firefox*/
   -moz-appearance: none;
-  /*Hiding the select arrow for chrome*/
   -webkit-appearance:none;
-  /*Hiding the select arrow default implementation*/
   appearance: none;
 }
-/*Hiding the select arrow for IE10*/
 .custom-dropdown select::-ms-expand {
   display: none;
 }
@@ -137,7 +125,7 @@ body, html {
   pointer-events: none;
 }
 
-.custom-dropdown::after { /*  Custom dropdown arrow */
+.custom-dropdown::after {
   content: "\25BC";
   height: 1em;
   font-size: .625em;
@@ -147,7 +135,7 @@ body, html {
   margin-top: -.5em;
 }
 
-.custom-dropdown::before { /*  Custom dropdown arrow cover */
+.custom-dropdown::before {
   width: 2em;
   right: 0;
   top: 0;
@@ -189,13 +177,11 @@ input[type=submit] {
   cursor: pointer;
 }
 
-/* Add a black background color to the top navigation */
 .topnav {
     background-color: #333;
     overflow: hidden;
 }
 
-/* Style the links inside the navigation bar */
 .topnav a {
   float: left;
   color: #f2f2f2;
@@ -205,13 +191,11 @@ input[type=submit] {
   font-size: 17px;
 }
 
-/* Add a color to the active/current link */
 .topnav a.active {
   background-color: #f99e1a;
   color: white;
 }
 
-/* Right-aligned section inside the top navigation */
 .topnav-right {
   float: right;
 }

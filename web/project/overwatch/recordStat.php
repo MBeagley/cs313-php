@@ -62,7 +62,6 @@ catch (PDOException $ex)
     <div class='resultsColumn'>
       <div class='card'>        
         <?php
-        //echo "<h3>".$suggestNames[$x]."</h3>";
         echo "<img class='icon' id='suggestIcon".$_POST['character']."' src='images/".$_POST['character'].".png'>";
         try
         {
